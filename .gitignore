@@ -1,0 +1,12 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDES and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

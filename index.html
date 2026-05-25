@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Lucas Gouvea Advogado | Advocacia Premium em Direito Cível e Médico</title>
+    <meta name="description" content="Escritório de advocacia de alto padrão focado em Direito Cível e Direito Médico. Atendimento personalizado, estratégico e transparente. Agende uma consulta jurídica.">
+    <meta name="keywords" content="Lucas Gouvea, Advogado, Direito Cível, Direito Médico, Erro Médico, Contratos, Indenização, Advocacia Premium, Advogado de Luxo, Advocacia São Paulo, Atendimento Personalizado">
+    <meta name="author" content="Lucas Gouvea Advogado">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Facebook / LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lucasgouvea.adv.br/">
+    <meta property="og:title" content="Lucas Gouvea Advogado | Advocacia Premium">
+    <meta property="og:description" content="Soluções jurídicas estratégicas com atendimento personalizado e excelência técnica em Direito Cível e Médico.">
+    <meta property="og:image" content="assets/logo-stacked.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lucas Gouvea Advogado | Advocacia Premium">
+    <meta name="twitter:description" content="Soluções jurídicas estratégicas com atendimento personalizado e excelência técnica em Direito Cível e Médico.">
+    <meta name="twitter:image" content="assets/logo-stacked.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate on Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon (Fallback) -->
+    <link rel="icon" type="image/png" href="assets/logo-stacked.png">
+
+    <!-- Schema.org JSON-LD para SEO Jurídico -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Lucas Gouvea Advogado",
+      "image": "https://www.lucasgouvea.adv.br/assets/logo-stacked.png",
+      "@id": "https://www.lucasgouvea.adv.br/#legalservice",
+      "url": "https://www.lucasgouvea.adv.br/",
+      "telephone": "+5511999999999",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Paulista, 1000 - Bela Vista",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "01310-100",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -23.561684,
+        "longitude": -46.655981
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/lucasgouvea.adv",
+        "https://www.linkedin.com/in/lucasgouvea"
+      ]
+    }
+    </script>
+</head>
+<body class="light-mode">
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Dr.+Lucas.+Gostaria+de+agendar+uma+consulta." class="whatsapp-float" target="_blank" aria-label="Falar pelo WhatsApp" rel="noopener noreferrer">
+        <i data-lucide="message-circle" class="whatsapp-icon"></i>
+        <span class="whatsapp-tooltip">Fale Conosco</span>
+    </a>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="#" class="logo-link" aria-label="Lucas Gouvea Advogado Home">
+                <img src="assets/logo-horizontal-advogado.png" alt="Lucas Gouvea Advogado" class="logo-img">
+            </a>
+            
+            <nav class="nav-desktop" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#atuacao">Áreas de Atuação</a></li>
+                    <li><a href="#como-funciona">Como Funciona</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Dark Mode Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar modo escuro/claro">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+
+                <!-- CTA Header Button -->
+                <a href="#contato" class="btn btn-outline btn-sm btn-header">Agendar Consulta</a>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu móvel">
+        <div class="drawer-header">
+            <img src="assets/logo-stacked.png" alt="Lucas Gouvea Advogado" class="drawer-logo">
+            <button class="drawer-close" aria-label="Fechar menu">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <ul>
+                <li><a href="#sobre" class="drawer-link">Sobre</a></li>
+                <li><a href="#atuacao" class="drawer-link">Áreas de Atuação</a></li>
+                <li><a href="#como-funciona" class="drawer-link">Como Funciona</a></li>
+                <li><a href="#faq" class="drawer-link">FAQ</a></li>
+                <li><a href="#contato" class="drawer-link">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="drawer-footer">
+            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Dr.+Lucas.+Gostaria+de+agendar+uma+consulta." target="_blank" class="btn btn-gold btn-full mb-3" rel="noopener noreferrer">
+                <i data-lucide="message-circle"></i> Fale via WhatsApp
+            </a>
+            <div class="drawer-socials">
+                <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="drawer-overlay"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <!-- Partículas animadas de background -->
+            <div class="hero-particles">
+                <div class="particle p1"></div>
+                <div class="particle p2"></div>
+                <div class="particle p3"></div>
+                <div class="particle p4"></div>
+                <div class="particle p5"></div>
+            </div>
+            
+            <div class="container hero-container">
+                <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                    <span class="hero-tagline">Advocacia de Alto Padrão</span>
+                    <h1 class="hero-title">Soluções jurídicas estratégicas com atendimento personalizado.</h1>
+                    <p class="hero-subtitle">Atuação especializada em Direito Cível e Direito Médico, oferecendo suporte jurídico com segurança, transparência e excelência técnica.</p>
+                    
+                    <div class="hero-ctas">
+                        <a href="#contato" class="btn btn-gold">
+                            <span>Agendar consulta</span>
+                            <i data-lucide="arrow-right" class="btn-icon"></i>
+                        </a>
+                        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Dr.+Lucas.+Gostaria+de+agendar+uma+consulta." target="_blank" class="btn btn-outline" rel="noopener noreferrer">
+                            <i data-lucide="message-circle" class="btn-icon"></i>
+                            <span>Fale via WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="glass-card hero-badge-card">
+                        <div class="badge-icon-container">
+                            <i data-lucide="shield-check" class="badge-icon"></i>
+                        </div>
+                        <div class="badge-text">
+                            <h3>Defesa de Direitos</h3>
+                            <p>Segurança jurídica ativa</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-monogram-container">
+                        <!-- Elegant abstract representation of the logo column -->
+                        <div class="hero-monogram-glow"></div>
+                        <img src="assets/logo-stacked.png" alt="LUCAS GOUVEA Logo Monogram" class="hero-monogram-img">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-scroll-indicator">
+                <a href="#sobre" aria-label="Ir para a próxima seção">
+                    <span class="scroll-text">Descubra</span>
+                    <span class="scroll-line"></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção Sobre -->
+        <section class="about-section" id="sobre">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-subtitle">Sobre o Escritório</span>
+                    <h2 class="section-title">Compromisso com a defesa dos seus direitos</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-image-container" data-aos="fade-right" data-aos-delay="100">
+                        <div class="about-image-frame">
+                            <div class="about-image-placeholder">
+                                <i data-lucide="scale" class="placeholder-icon"></i>
+                                <span class="placeholder-text">Lucas Gouvea<br><small>Advogado fundador</small></span>
+                            </div>
+                        </div>
+                        <div class="about-experience-badge">
+                            <span class="exp-number">10+</span>
+                            <span class="exp-text">Anos de dedicação integral</span>
+                        </div>
+                    </div>
+
+                    <div class="about-text-content" data-aos="fade-left" data-aos-delay="200">
+                        <p class="about-lead">
+                            O escritório <strong>Lucas Gouvea Advogado</strong> atua com foco em soluções jurídicas eficientes, atendimento humanizado e estratégias personalizadas para cada cliente.
+                        </p>
+                        <p class="about-body">
+                            Com sede estruturada e atendimento de abrangência nacional através do modelo digital, nossa missão é desmistificar a advocacia clássica, proporcionando um acompanhamento transparente, célere e adaptado à realidade de cada pessoa ou empresa. Acreditamos que a excelência técnica deve caminhar de mãos dadas com a proximidade e empatia.
+                        </p>
+
+                        <!-- Grid de Diferenciais -->
+                        <div class="diferenciais-grid">
+                            <div class="diferencial-card">
+                                <div class="diferencial-icon">
+                                    <i data-lucide="user-check"></i>
+                                </div>
+                                <div class="diferencial-info">
+                                    <h4>Atendimento Personalizado</h4>
+                                    <p>Cada caso é tratado de forma exclusiva, analisando todas as nuances com dedicação.</p>
+                                </div>
+                            </div>
+
+                            <div class="diferencial-card">
+                                <div class="diferencial-icon">
+                                    <i data-lucide="eye"></i>
+                                </div>
+                                <div class="diferencial-info">
+                                    <h4>Transparência Absoluta</h4>
+                                    <p>Acesso fácil a informações sobre o andamento processual, de forma clara e objetiva.</p>
+                                </div>
+                            </div>
+
+                            <div class="diferencial-card">
+                                <div class="diferencial-icon">
+                                    <i data-lucide="git-branch"></i>
+                                </div>
+                                <div class="diferencial-info">
+                                    <h4>Estratégia Individualizada</h4>
+                                    <p>Desenvolvimento de teses específicas voltadas à maximização do sucesso do cliente.</p>
+                                </div>
+                            </div>
+
+                            <div class="diferencial-card">
+                                <div class="diferencial-icon">
+                                    <i data-lucide="laptop"></i>
+                                </div>
+                                <div class="diferencial-info">
+                                    <h4>Digital e Presencial</h4>
+                                    <p>Flexibilidade de reuniões físicas ou conferências virtuais de alta segurança.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Áreas de Atuação -->
+        <section class="services-section" id="atuacao">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-subtitle">Especialidades</span>
+                    <h2 class="section-title">Nossas Áreas de Atuação</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-desc">Atuação focada e especializada para assegurar os melhores resultados práticos e teóricos.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Direito Cível -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-card-decor"></div>
+                        <div class="service-icon-box">
+                            <i data-lucide="scale"></i>
+                        </div>
+                        <h3 class="service-title">Direito Cível</h3>
+                        <p class="service-description">Atuação em ações indenizatórias, contratos, responsabilidade civil, cobranças, obrigações e demandas patrimoniais.</p>
+                        <ul class="service-bullets">
+                            <li><i data-lucide="check"></i> Análise e Redação de Contratos</li>
+                            <li><i data-lucide="check"></i> Responsabilidade Civil e Dano Moral</li>
+                            <li><i data-lucide="check"></i> Ações de Cobrança e Execuções</li>
+                            <li><i data-lucide="check"></i> Direito de Propriedade e Posse</li>
+                        </ul>
+                        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Dr.+Lucas.+Gostaria+de+tirar+uma+d%C3%BAvida+sobre+Direito+C%C3%ADvel." target="_blank" class="service-link" rel="noopener noreferrer">
+                            <span>Solicitar Assessoria</span>
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Direito Médico -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-card-decor"></div>
+                        <div class="service-icon-box">
+                            <i data-lucide="heart-pulse"></i>
+                        </div>
+                        <h3 class="service-title">Direito Médico</h3>
+                        <p class="service-description">Assessoria jurídica em casos envolvendo erro médico, responsabilidade profissional, judicialização da saúde e direitos do paciente.</p>
+                        <ul class="service-bullets">
+                            <li><i data-lucide="check"></i> Defesa em Erro Médico e Odontológico</li>
+                            <li><i data-lucide="check"></i> Negativa de Cobertura de Planos de Saúde</li>
+                            <li><i data-lucide="check"></i> Medicamentos e Cirurgias de Alto Custo</li>
+                            <li><i data-lucide="check"></i> Defesa Ética de Profissionais da Saúde</li>
+                        </ul>
+                        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Dr.+Lucas.+Gostaria+de+tirar+uma+d%C3%BAvida+sobre+Direito+M%C3%A9dico." target="_blank" class="service-link" rel="noopener noreferrer">
+                            <span>Solicitar Assessoria</span>
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Como Funciona -->
+        <section class="workflow-section" id="como-funciona">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-subtitle">Metodologia</span>
+                    <h2 class="section-title">Como Funciona Nosso Atendimento</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-badge">1</div>
+                        <div class="timeline-content">
+                            <h3>Primeiro Contato</h3>
+                            <p>Realizamos uma conversa inicial (WhatsApp ou ligação) para entender as primeiras necessidades do seu caso e agendar uma reunião detalhada.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-badge">2</div>
+                        <div class="timeline-content">
+                            <h3>Análise do Caso</h3>
+                            <p>Estudamos minuciosamente a documentação apresentada, identificando as bases legais e riscos envolvidos na demanda.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-badge">3</div>
+                        <div class="timeline-content">
+                            <h3>Estratégia Jurídica</h3>
+                            <p>Apresentamos uma proposta de atuação personalizada, detalhando os caminhos processuais ou extrajudiciais mais eficientes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-badge">4</div>
+                        <div class="timeline-content">
+                            <h3>Acompanhamento Completo</h3>
+                            <p>Execução da estratégia com envio de relatórios periódicos, garantindo que você esteja ciente de cada passo do processo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Autoridade (Métricas) -->
+        <section class="stats-section">
+            <div class="container stats-container">
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-icon-wrapper">
+                        <i data-lucide="briefcase"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="1200">0</h3>
+                    <p class="stat-label">Casos Atendidos</p>
+                </div>
+
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-icon-wrapper">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="950">0</h3>
+                    <p class="stat-label">Clientes Assessorados</p>
+                </div>
+
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-icon-wrapper">
+                        <i data-lucide="calendar"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="10">0</h3>
+                    <p class="stat-label">Anos de Atuação</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-subtitle">Opinião de quem confia</span>
+                    <h2 class="section-title">Depoimentos dos Clientes</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="testimonials-carousel-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <!-- Depoimento 1 -->
+                            <div class="testimonial-slide">
+                                <div class="testimonial-card">
+                                    <div class="quote-icon-box"><i data-lucide="quote"></i></div>
+                                    <p class="testimonial-text">"O Dr. Lucas conduziu o meu processo de erro médico com extrema dedicação e profissionalismo. Sempre esclareceu minhas dúvidas e me trouxe muita segurança em um momento muito delicado da minha vida."</p>
+                                    <div class="testimonial-client">
+                                        <div class="client-avatar-placeholder">M</div>
+                                        <div class="client-info">
+                                            <span class="client-name">Mariana Silva</span>
+                                            <span class="client-subtitle">Caso de Direito Médico</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Depoimento 2 -->
+                            <div class="testimonial-slide">
+                                <div class="testimonial-card">
+                                    <div class="quote-icon-box"><i data-lucide="quote"></i></div>
+                                    <p class="testimonial-text">"Fui atendido em uma demanda contratual cível complexa. A rapidez com que o Dr. Lucas desenhou a estratégia e resolveu a situação no âmbito extrajudicial nos poupou anos de dor de cabeça."</p>
+                                    <div class="testimonial-client">
+                                        <div class="client-avatar-placeholder">R</div>
+                                        <div class="client-info">
+                                            <span class="client-name">Roberto Menezes</span>
+                                            <span class="client-subtitle">Empresário - Direito Cível</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Depoimento 3 -->
+                            <div class="testimonial-slide">
+                                <div class="testimonial-card">
+                                    <div class="quote-icon-box"><i data-lucide="quote"></i></div>
+                                    <p class="testimonial-text">"Excelente atendimento digital. Mesmo residindo em outro estado, consegui resolver minha pendência de saúde com a agilidade que a situação exigia. Recomendo fortemente."</p>
+                                    <div class="testimonial-client">
+                                        <div class="client-avatar-placeholder">A</div>
+                                        <div class="client-info">
+                                            <span class="client-name">Ana Beatriz Costa</span>
+                                            <span class="client-subtitle">Ação de Plano de Saúde</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" aria-label="Depoimento anterior">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <div class="carousel-dots"></div>
+                        <button class="carousel-btn next" aria-label="Próximo depoimento">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Expansível -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-subtitle">Dúvidas Frequentes</span>
+                    <h2 class="section-title">Perguntas Frequentes</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="faq-accordion-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span>Como funciona a consulta jurídica inicial?</span>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-content-inner">
+                                <p>A consulta jurídica inicial serve para entender os detalhes do seu caso. Pode ser realizada por chamada de vídeo, WhatsApp ou presencialmente. Nela, o advogado avalia os documentos, esclarece suas dúvidas e aponta os caminhos estratégicos mais adequados para a defesa dos seus direitos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span>Vocês atendem clientes de forma online?</span>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-content-inner">
+                                <p>Sim! Atendemos clientes de todo o Brasil de forma 100% digital. Toda a análise de documentos, reuniões de alinhamento e até mesmo a assinatura do contrato e envio das petições são feitos de forma segura pela internet. Isso traz agilidade e conforto para você sem perder a pessoalidade do atendimento.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span>Quanto tempo costuma demorar um processo judicial?</span>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-content-inner">
+                                <p>O tempo de duração de um processo é variável, pois depende da complexidade da matéria, da comarca onde tramita e da possibilidade de recursos da parte contrária. Sempre priorizamos soluções extrajudiciais (acordos) para acelerar a resolução. Quando a via judicial é necessária, trabalhamos com máximo empenho para que tramite o mais rápido possível.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false">
+                            <span>Como posso enviar os meus documentos para análise?</span>
+                            <i data-lucide="chevron-down" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="faq-content-inner">
+                                <p>Os documentos podem ser enviados digitalizados em formato PDF ou imagem nítida diretamente pelo nosso WhatsApp corporativo ou por e-mail. Nossa equipe irá orientá-lo sobre quais documentos são necessários para a análise inicial do seu caso.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section class="contact-section" id="contato">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-subtitle">Entre em contato</span>
+                    <h2 class="section-title">Solicite Atendimento Especializado</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-desc">Preencha o formulário abaixo ou chame diretamente no WhatsApp para falar com o Dr. Lucas Gouvea.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Informações de Contato -->
+                    <div class="contact-info-panel" data-aos="fade-right" data-aos-delay="100">
+                        <div class="info-card">
+                            <img src="assets/logo-stacked.png" alt="LUCAS GOUVEA Logo" class="contact-info-logo">
+                            <h3>LUCAS GOUVEA</h3>
+                            <span class="info-logo-subtitle">ADVOGADO</span>
+                            <p class="contact-tagline-text">Excelência técnica e atendimento humanizado na defesa dos seus direitos.</p>
+                        </div>
+                        
+                        <div class="info-details">
+                            <div class="info-item">
+                                <div class="info-icon-wrapper">
+                                    <i data-lucide="phone"></i>
+                                </div>
+                                <div class="info-text">
+                                    <span>Telefone</span>
+                                    <a href="tel:+5511999999999">+55 (11) 99999-9999</a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon-wrapper">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <div class="info-text">
+                                    <span>E-mail</span>
+                                    <a href="mailto:contato@lucasgouvea.adv.br">contato@lucasgouvea.adv.br</a>
+                                </div>
+                            </div>
+
+                            <div class="info-item">
+                                <div class="info-icon-wrapper">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <div class="info-text">
+                                    <span>Escritório</span>
+                                    <p>Av. Paulista, 1000, 14º andar - Bela Vista, São Paulo - SP</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="map-container">
+                            <!-- Mapa interativo placeholder em estilo premium escuro -->
+                            <div class="map-placeholder">
+                                <i data-lucide="map" class="map-icon"></i>
+                                <span>Mapa de Localização Integrado<br><small>Av. Paulista, 1000 - São Paulo</small></span>
+                                <a href="https://maps.google.com" target="_blank" class="btn btn-outline btn-xs" rel="noopener noreferrer">Ver no Google Maps</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulário de Contato -->
+                    <div class="contact-form-panel" data-aos="fade-left" data-aos-delay="200">
+                        <form id="legal-contact-form" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-name">Nome Completo *</label>
+                                    <div class="input-wrapper">
+                                        <i data-lucide="user" class="input-icon"></i>
+                                        <input type="text" id="form-name" placeholder="Seu nome completo" required>
+                                    </div>
+                                    <span class="error-msg" id="error-name">Por favor, insira seu nome completo.</span>
+                                </div>
+                            </div>
+
+                            <div class="form-row split">
+                                <div class="form-group">
+                                    <label for="form-phone">Telefone / WhatsApp *</label>
+                                    <div class="input-wrapper">
+                                        <i data-lucide="phone-call" class="input-icon"></i>
+                                        <input type="tel" id="form-phone" placeholder="(11) 99999-9999" required>
+                                    </div>
+                                    <span class="error-msg" id="error-phone">Por favor, insira um telefone válido.</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="form-email">E-mail *</label>
+                                    <div class="input-wrapper">
+                                        <i data-lucide="mail" class="input-icon"></i>
+                                        <input type="email" id="form-email" placeholder="seuemail@exemplo.com" required>
+                                    </div>
+                                    <span class="error-msg" id="error-email">Por favor, insira um e-mail válido.</span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-area">Área Jurídica de Interesse *</label>
+                                    <div class="input-wrapper">
+                                        <i data-lucide="scale" class="input-icon"></i>
+                                        <select id="form-area" required>
+                                            <option value="" disabled selected>Selecione a área de interesse</option>
+                                            <option value="direito-civel">Direito Cível (Contratos, Indenizações, Posse)</option>
+                                            <option value="direito-medico">Direito Médico (Erro Médico, Planos de Saúde)</option>
+                                            <option value="outra-area">Outros Assuntos Jurídicos</option>
+                                        </select>
+                                    </div>
+                                    <span class="error-msg" id="error-area">Por favor, selecione uma área de atendimento.</span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-message">Breve descrição do caso *</label>
+                                    <div class="input-wrapper textarea-wrapper">
+                                        <textarea id="form-message" rows="5" placeholder="Descreva brevemente a sua situação jurídica..." required></textarea>
+                                    </div>
+                                    <span class="error-msg" id="error-message">Por favor, descreva brevemente seu caso.</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold btn-full btn-submit">
+                                <span class="submit-text">Solicitar atendimento</span>
+                                <i data-lucide="send" class="btn-icon"></i>
+                            </button>
+                            
+                            <!-- Success state -->
+                            <div class="form-success-banner" id="form-success-banner">
+                                <i data-lucide="check-circle" class="success-icon"></i>
+                                <div>
+                                    <h4>Mensagem enviada com sucesso!</h4>
+                                    <p>O Dr. Lucas entrará em contato em breve pelo telefone ou e-mail fornecidos.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <img src="assets/logo-horizontal-advogado.png" alt="LUCAS GOUVEA Logo" class="footer-logo">
+                <p>Advocacia boutique focada em soluções estratégicas personalizadas, sob os valores da ética, agilidade e excelência técnica.</p>
+                <div class="footer-social-links">
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Quem Somos</a></li>
+                    <li><a href="#atuacao">Áreas de Atuação</a></li>
+                    <li><a href="#como-funciona">Como Funciona</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Contatos Rápidos</h4>
+                <p><i data-lucide="phone"></i> +55 (11) 99999-9999</p>
+                <p><i data-lucide="mail"></i> contato@lucasgouvea.adv.br</p>
+                <p><i data-lucide="map-pin"></i> Av. Paulista, 1000, 14º andar - São Paulo - SP</p>
+                <p><i data-lucide="clock"></i> Seg - Sex: 09h às 18h</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-container">
+                <p>&copy; 2026 Lucas Gouvea Advogado. Todos os direitos reservados.</p>
+                <p>Desenvolvido com sofisticação jurídica.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Voltar ao topo">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
