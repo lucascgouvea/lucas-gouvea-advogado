@@ -20,34 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================================================
-       1. TEMA CLARO / ESCURO (DARK MODE)
+       1. TEMA CLARO (FIXO)
        ========================================================================== */
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const body = document.body;
-
-    // Verificar preferência salva ou do sistema
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        body.classList.remove('light-mode');
-        body.classList.add('dark-mode');
-    } else {
-        body.classList.remove('dark-mode');
-        body.classList.add('light-mode');
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
-        if (body.classList.contains('dark-mode')) {
-            body.classList.remove('dark-mode');
-            body.classList.add('light-mode');
-            localStorage.setItem('theme', 'light');
-        } else {
-            body.classList.remove('light-mode');
-            body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark');
-        }
-    });
+    // Forçar sempre tema claro e limpar qualquer preferência salva
+    document.body.classList.remove('dark-mode');
+    document.body.classList.add('light-mode');
+    localStorage.removeItem('theme');
 
     /* ==========================================================================
        2. SCROLL HEADER EFFECT
