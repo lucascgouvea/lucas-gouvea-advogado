@@ -13,7 +13,7 @@
     
     <!-- Open Graph (Facebook / LinkedIn) -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.lucasgouvea.adv.br/">
+    <meta property="og:url" content="https://www.lgouvea.com/">
     <meta property="og:title" content="Lucas Gouvea | Advogado em São Carlos">
     <meta property="og:description" content="Assessoria jurídica em São Carlos com atendimento digital e estratégico. Especializado em Direito Cível, Médico e Imobiliário.">
     <meta property="og:image" content="assets/logo-stacked.png">
@@ -44,9 +44,9 @@
       "@context": "https://schema.org",
       "@type": "LegalService",
       "name": "Lucas Gouvea Advogado",
-      "image": "https://www.lucasgouvea.adv.br/assets/logo-stacked.png",
-      "@id": "https://www.lucasgouvea.adv.br/#legalservice",
-      "url": "https://www.lucasgouvea.adv.br/",
+      "image": "https://www.lgouvea.com/assets/logo-stacked.png",
+      "@id": "https://www.lgouvea.com/#legalservice",
+      "url": "https://www.lgouvea.com/",
       "telephone": "+5516936180178",
       "priceRange": "$$$",
       "address": {
@@ -619,7 +619,7 @@
                                 </div>
                                 <div class="info-text">
                                     <span>E-mail</span>
-                                    <a href="mailto:contato@lucasgouvea.adv.br">contato@lucasgouvea.adv.br</a>
+                                    <a href="mailto:contato@lgouvea.com">contato@lgouvea.com</a>
                                 </div>
                             </div>
 
@@ -638,12 +638,18 @@
                     <!-- Formulário de Contato -->
                     <div class="contact-form-panel" data-aos="fade-left" data-aos-delay="200">
                         <form id="legal-contact-form" novalidate>
+                            <!-- Configurações do Web3Forms -->
+                            <input type="hidden" name="access_key" value="096d6d62-ff69-4713-b6bf-8ebe97aeb3a4">
+                            <input type="hidden" name="subject" value="Novo Contato de Cliente - Lucas Gouvea Advogado">
+                            <input type="hidden" name="from_name" value="Website Lucas Gouvea">
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="form-name">Nome Completo *</label>
                                     <div class="input-wrapper">
                                         <i data-lucide="user" class="input-icon"></i>
-                                        <input type="text" id="form-name" placeholder="Seu nome completo" required>
+                                        <input type="text" id="form-name" name="name" placeholder="Seu nome completo" required>
                                     </div>
                                     <span class="error-msg" id="error-name">Por favor, insira seu nome completo.</span>
                                 </div>
@@ -654,7 +660,7 @@
                                     <label for="form-phone">Telefone / WhatsApp *</label>
                                     <div class="input-wrapper">
                                         <i data-lucide="phone-call" class="input-icon"></i>
-                                        <input type="tel" id="form-phone" placeholder="(16) 93618-0178" required>
+                                        <input type="tel" id="form-phone" name="phone" placeholder="(16) 93618-0178" required>
                                     </div>
                                     <span class="error-msg" id="error-phone">Por favor, insira um telefone válido.</span>
                                 </div>
@@ -663,7 +669,7 @@
                                     <label for="form-email">E-mail *</label>
                                     <div class="input-wrapper">
                                         <i data-lucide="mail" class="input-icon"></i>
-                                        <input type="email" id="form-email" placeholder="seuemail@exemplo.com" required>
+                                        <input type="email" id="form-email" name="email" placeholder="seuemail@exemplo.com" required>
                                     </div>
                                     <span class="error-msg" id="error-email">Por favor, insira um e-mail válido.</span>
                                 </div>
@@ -674,7 +680,7 @@
                                     <label for="form-area">Área Jurídica de Interesse *</label>
                                     <div class="input-wrapper">
                                         <i data-lucide="scale" class="input-icon"></i>
-                                        <select id="form-area" required>
+                                        <select id="form-area" name="area" required>
                                             <option value="" disabled selected>Selecione a área de interesse</option>
                                             <option value="direito-civel">Direito Cível (Contratos, Indenizações, Posse)</option>
                                             <option value="direito-medico">Direito Médico (Erro Médico, Planos de Saúde)</option>
@@ -691,7 +697,7 @@
                                 <div class="form-group">
                                     <label for="form-message">Breve descrição do caso *</label>
                                     <div class="input-wrapper textarea-wrapper">
-                                        <textarea id="form-message" rows="5" placeholder="Descreva brevemente a sua situação jurídica..." required></textarea>
+                                        <textarea id="form-message" name="message" rows="5" placeholder="Descreva brevemente a sua situação jurídica..." required></textarea>
                                     </div>
                                     <span class="error-msg" id="error-message">Por favor, descreva brevemente seu caso.</span>
                                 </div>
@@ -744,7 +750,7 @@
             <div class="footer-col contact-col">
                                 <h4>Contatos Rápidos</h4>
                                 <p><i data-lucide="phone"></i> +55 (16) 93618-0178</p>
-                                <p><i data-lucide="mail"></i> contato@lucasgouvea.adv.br</p>
+                                <p><i data-lucide="mail"></i> contato@lgouvea.com</p>
                                 <p><i data-lucide="globe"></i> Atendimento 100% Digital - Todo o Brasil</p>
                                 <p><i data-lucide="clock"></i> Seg - Sex: 09h às 18h</p>
                             </div>

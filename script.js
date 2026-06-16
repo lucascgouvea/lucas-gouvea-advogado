@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 groupMessage.classList.remove('has-error');
             }
 
-            // Se for válido, enviar formulário (Simulação de envio AJAX)
+            // Se for válido, enviar formulário via API real (Web3Forms)
             if (isValid) {
                 const submitBtn = contactForm.querySelector('.btn-submit');
                 const submitText = submitBtn.querySelector('.submit-text');
@@ -338,23 +338,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.classList.add('loading');
                 submitText.innerText = 'Enviando...';
 
-                // Simular envio de API com atraso
-                setTimeout(() => {
+                const formData = new FormData(contactForm);
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(async (response) => {
+                    let res = await response.json();
+                    if (response.status == 200) {
+                        // Exibir sucesso e limpar formulário
+                        successBanner.style.display = 'flex';
+                        contactForm.reset();
+                        
+                        // Rolar suavemente até o banner de sucesso
+                        successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        // Ocultar banner de sucesso após 8 segundos
+                        setTimeout(() => {
+                            successBanner.style.display = 'none';
+                        }, 8000);
+                    } else {
+                        console.log(res);
+                        alert("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    alert("Ocorreu um erro de rede. Verifique sua conexão e tente novamente.");
+                })
+                .then(() => {
                     submitBtn.classList.remove('loading');
                     submitText.innerText = 'Solicitar atendimento';
-                    
-                    // Exibir sucesso e limpar formulário
-                    successBanner.style.display = 'flex';
-                    contactForm.reset();
-                    
-                    // Rolar suavemente até o banner de sucesso
-                    successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                    // Ocultar banner de sucesso após 8 segundos
-                    setTimeout(() => {
-                        successBanner.style.display = 'none';
-                    }, 8000);
-                }, 1500);
+                });
             }
         });
     }
