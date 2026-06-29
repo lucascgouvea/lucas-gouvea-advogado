@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Jurídico | Lucas Gouvea Advogado em São Carlos</title>
+    <meta name="description" content="Artigos, notícias e dicas jurídicas sobre Direito Civil, Direito Médico e Direito Imobiliário pelo advogado Dr. Lucas Gouvea, especialista em São Carlos.">
+    <link rel="canonical" href="https://lgouvea.com/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lgouvea.com/blog/">
+    <meta property="og:title" content="Blog Jurídico | Lucas Gouvea Advogado">
+    <meta property="og:description" content="Artigos, notícias e dicas jurídicas sobre Direito Civil, Direito Médico e Direito Imobiliário.">
+    <meta property="og:image" content="https://lgouvea.com/assets/logo-stacked.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* ── Blog-specific overrides ── */
+        body { background: #f8f7f4; }
+
+        /* ─── Hero Banner ─── */
+        .blog-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #0f1b2d 55%, #1a2a42 100%);
+            padding: 160px 0 90px;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(212,175,55,0.07) 0%, transparent 70%);
+        }
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60px;
+            background: #f8f7f4;
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+        .blog-hero-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        .blog-hero-tag {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: #D6AF67;
+            margin-bottom: 20px;
+        }
+        .blog-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            color: #fff;
+            line-height: 1.18;
+            margin-bottom: 20px;
+        }
+        .blog-hero-title span { color: #D6AF67; }
+        .blog-hero-desc {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ─── Articles section ─── */
+        .blog-articles {
+            padding: 80px 0 100px;
+        }
+
+        /* ─── Article Cards ─── */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .a-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(15,27,45,0.07);
+            transition: transform 0.32s ease, box-shadow 0.32s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(15,27,45,0.06);
+        }
+        .a-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(15,27,45,0.12);
+        }
+
+        /* Gradient banner replacing the image */
+        .a-card-banner {
+            position: relative;
+            height: 190px;
+            display: flex;
+            align-items: flex-end;
+            padding: 24px 28px;
+            overflow: hidden;
+        }
+        .a-card-banner-direito-medico {
+            background: linear-gradient(135deg, #0a1628 0%, #15263d 60%, #1f3456 100%);
+        }
+        .a-card-banner-direito-imobiliario {
+            background: linear-gradient(135deg, #14201a 0%, #1a2e20 60%, #243d2a 100%);
+        }
+        .a-card-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 30%, rgba(212,175,55,0.12) 0%, transparent 65%);
+        }
+
+        /* Large decorative icon */
+        .a-card-banner-icon {
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.12;
+            color: #D6AF67;
+        }
+        .a-card-banner-icon svg {
+            width: 100px;
+            height: 100px;
+        }
+
+        .a-card-banner-bottom {
+            position: relative;
+            z-index: 1;
+        }
+        .a-card-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(212,175,55,0.18);
+            border: 1px solid rgba(212,175,55,0.35);
+            color: #D6AF67;
+            padding: 5px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .a-card-category svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+        .a-card-body {
+            padding: 28px 28px 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .a-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #0f1b2d;
+            line-height: 1.4;
+            margin-bottom: 14px;
+        }
+        .a-card-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .a-card-title a:hover { color: #b8942e; }
+        .a-card-excerpt {
+            font-size: 0.93rem;
+            color: #5a6a7e;
+            line-height: 1.65;
+            flex-grow: 1;
+            margin-bottom: 22px;
+        }
+        .a-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 18px;
+            border-top: 1px solid #eef0f3;
+        }
+        .a-card-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.82rem;
+            color: #8898aa;
+        }
+        .a-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .a-card-meta svg { width: 14px; height: 14px; }
+        .a-card-read {
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: #D6AF67;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.2s;
+        }
+        .a-card-read:hover { gap: 9px; }
+        .a-card-read svg { width: 14px; height: 14px; }
+
+        @media (max-width: 768px) {
+            .blog-hero { padding: 130px 0 80px; }
+            .articles-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header" id="header">
+        <div class="container header-container">
+            <a href="../" class="logo-link">
+                <img src="../assets/logo-horizontal-advogado.png" alt="LUCAS GOUVEA Advogado" class="logo-img" style="height:40px;">
+            </a>
+            <nav class="nav-desktop" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="../#sobre">Sobre</a></li>
+                    <li><a href="../#atuacao">Áreas de Atuação</a></li>
+                    <li><a href="../#como-funciona">Como Funciona</a></li>
+                    <li><a href="../#faq">FAQ</a></li>
+                    <li><a href="../blog/" style="color:#D6AF67; font-weight:600;">Blog</a></li>
+                    <li><a href="../#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="../#contato" class="btn btn-darkblue btn-sm btn-header">Agendar Consulta</a>
+                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Menu móvel">
+        <div class="drawer-header">
+            <img src="../assets/logo-stacked.png" alt="Lucas Gouvea Advogado" class="drawer-logo">
+            <button class="drawer-close" aria-label="Fechar menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <ul>
+                <li><a href="../#sobre" class="drawer-link">Sobre</a></li>
+                <li><a href="../#atuacao" class="drawer-link">Áreas de Atuação</a></li>
+                <li><a href="../#como-funciona" class="drawer-link">Como Funciona</a></li>
+                <li><a href="../#faq" class="drawer-link">FAQ</a></li>
+                <li><a href="../blog/" class="drawer-link">Blog</a></li>
+                <li><a href="../#contato" class="drawer-link">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="drawer-footer">
+            <a href="https://wa.me/5516936180178?text=Ol%C3%A1%2C+Dr.+Lucas.+Gostaria+de+agendar+uma+consulta." target="_blank" class="btn btn-gold btn-full mb-3" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                Fale via WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Banner -->
+    <section class="blog-hero">
+        <div class="container blog-hero-inner">
+            <span class="blog-hero-tag" data-aos="fade-up">Conhecimento Jurídico</span>
+            <h1 class="blog-hero-title" data-aos="fade-up" data-aos-delay="80">
+                Blog <span>Jurídico</span>
+            </h1>
+            <p class="blog-hero-desc" data-aos="fade-up" data-aos-delay="160">
+                Análises, orientações e artigos sobre Direito Civil, Médico e Imobiliário para que você conheça e proteja os seus direitos.
+            </p>
+        </div>
+    </section>
+
+    <!-- Articles -->
+    <section class="blog-articles">
+        <div class="container">
+            <div class="articles-grid">
+
+                <!-- Card 1 – Direito Médico -->
+                <article class="a-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="a-card-banner a-card-banner-direito-medico">
+                        <!-- Decorative icon -->
+                        <div class="a-card-banner-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <div class="a-card-banner-bottom">
+                            <span class="a-card-category">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                Direito Médico
+                            </span>
+                        </div>
+                    </div>
+                    <div class="a-card-body">
+                        <h2 class="a-card-title">
+                            <a href="erro-medico-direitos-paciente/">Erro Médico: Como agir e quais são os direitos do paciente?</a>
+                        </h2>
+                        <p class="a-card-excerpt">O erro médico pode causar danos irreparáveis. Entenda como comprovar negligência ou imperícia e quais as formas de reparação civil e indenizatória disponíveis.</p>
+                        <div class="a-card-footer">
+                            <div class="a-card-meta">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    29 Jun, 2026
+                                </span>
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    5 min leitura
+                                </span>
+                            </div>
+                            <a href="erro-medico-direitos-paciente/" class="a-card-read">
+                                Ler artigo
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 – Direito Imobiliário -->
+                <article class="a-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="a-card-banner a-card-banner-direito-imobiliario">
+                        <!-- Decorative icon -->
+                        <div class="a-card-banner-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </div>
+                        <div class="a-card-banner-bottom">
+                            <span class="a-card-category">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                Direito Imobiliário
+                            </span>
+                        </div>
+                    </div>
+                    <div class="a-card-body">
+                        <h2 class="a-card-title">
+                            <a href="contrato-compra-venda-imovel-cuidados/">Contrato de Compra e Venda de Imóveis: Cuidados Fundamentais</a>
+                        </h2>
+                        <p class="a-card-excerpt">A aquisição de um imóvel exige cautela extrema. Saiba quais cláusulas não podem faltar e como mitigar riscos jurídicos em transações imobiliárias.</p>
+                        <div class="a-card-footer">
+                            <div class="a-card-meta">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    25 Jun, 2026
+                                </span>
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    4 min leitura
+                                </span>
+                            </div>
+                            <a href="contrato-compra-venda-imovel-cuidados/" class="a-card-read">
+                                Ler artigo
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <img src="../assets/logo-horizontal-light.png" alt="LUCAS GOUVEA Logo" class="footer-logo">
+                <p>Escritório de advocacia com sede em São Carlos, oferecendo atendimento jurídico digital para clientes em todo o Brasil. Ética, agilidade e excelência técnica em cada caso.</p>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/lucasgouvea.adv" aria-label="Instagram" title="Siga no Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/lucas-gouvea-7511311b3/" aria-label="LinkedIn" title="Conecte no LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="../#home">Home</a></li>
+                    <li><a href="../#sobre">Quem Somos</a></li>
+                    <li><a href="../#atuacao">Áreas de Atuação</a></li>
+                    <li><a href="../#como-funciona">Como Funciona</a></li>
+                    <li><a href="../#faq">FAQ</a></li>
+                    <li><a href="../blog/">Blog</a></li>
+                    <li><a href="../#contato">Fale Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Contatos Rápidos</h4>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.18 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.29 6.29l.38-.38a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +55 (16) 93618-0178
+                </p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    contato@lgouvea.com
+                </p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    São Carlos – SP (Atendimento Digital Nacional)
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container bottom-container">
+                <p>&copy; 2026 Lucas Gouvea Advogado. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
