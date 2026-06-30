@@ -329,54 +329,75 @@ document.addEventListener('DOMContentLoaded', () => {
                 groupMessage.classList.remove('has-error');
             }
 
-            // Se for válido, enviar formulário via API real (Web3Forms)
+            // Se for válido, enviar formulário
             if (isValid) {
                 const submitBtn = contactForm.querySelector('.btn-submit');
                 const submitText = submitBtn.querySelector('.submit-text');
                 const successBanner = document.getElementById('form-success-banner');
 
                 submitBtn.classList.add('loading');
-                submitText.innerText = 'Enviando...';
+                submitText.innerText = 'Verificando E-mail...';
 
-                const formData = new FormData(contactForm);
-                const object = Object.fromEntries(formData);
-                const json = JSON.stringify(object);
-
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: json
-                })
-                .then(async (response) => {
-                    let res = await response.json();
-                    if (response.status == 200) {
-                        // Exibir sucesso e limpar formulário
-                        successBanner.style.display = 'flex';
-                        contactForm.reset();
+                // Passo 1: Verificação profunda com ZeroBounce
+                const zbApiKey = '037530324f234166a39f5f9b430ec03f';
+                fetch(`https://api.zerobounce.net/v2/validate?api_key=${zbApiKey}&email=${encodeURIComponent(emailVal)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Aceitar 'valid', 'catch-all', 'unknown' (para não bloquear falsos positivos)
+                        // Bloquear 'invalid', 'spamtrap', 'abuse', 'do_not_mail'
+                        const blockStatuses = ['invalid', 'spamtrap', 'abuse', 'do_not_mail'];
                         
-                        // Rolar suavemente até o banner de sucesso
-                        successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        if (data.status && blockStatuses.includes(data.status)) {
+                            // E-mail inválido
+                            submitBtn.classList.remove('loading');
+                            submitText.innerText = 'Enviar Mensagem';
+                            groupEmail.classList.add('has-error');
+                            alert("Este e-mail não parece ser válido ou está desativado. Por favor, verifique ou tente outro.");
+                            return; // Interrompe o envio
+                        }
+                        
+                        // Passo 2: Se passou pelo ZeroBounce (ou deu status incerto), enviar via Web3Forms
+                        submitText.innerText = 'Enviando...';
+                        const formData = new FormData(contactForm);
+                        const object = Object.fromEntries(formData);
+                        const json = JSON.stringify(object);
 
-                        // Ocultar banner de sucesso após 8 segundos
-                        setTimeout(() => {
-                            successBanner.style.display = 'none';
-                        }, 8000);
-                    } else {
-                        console.log(res);
-                        alert("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                    alert("Ocorreu um erro de rede. Verifique sua conexão e tente novamente.");
-                })
-                .then(() => {
-                    submitBtn.classList.remove('loading');
-                    submitText.innerText = 'Solicitar atendimento';
-                });
+                        return fetch('https://api.web3forms.com/submit', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: json
+                        })
+                        .then(async (response) => {
+                            let res = await response.json();
+                            if (response.status == 200) {
+                                // Exibir sucesso e limpar formulário
+                                successBanner.style.display = 'flex';
+                                contactForm.reset();
+                                
+                                // Rolar suavemente até o banner de sucesso
+                                successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                                // Ocultar banner de sucesso após 8 segundos
+                                setTimeout(() => {
+                                    successBanner.style.display = 'none';
+                                }, 8000);
+                            } else {
+                                console.log(res);
+                                alert("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.log("Erro na validação ou envio:", error);
+                        alert("Ocorreu um erro de rede. Verifique sua conexão e tente novamente.");
+                    })
+                    .finally(() => {
+                        submitBtn.classList.remove('loading');
+                        submitText.innerText = 'Enviar Mensagem';
+                    });
             }
         });
     }
