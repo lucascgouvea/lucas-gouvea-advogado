@@ -156,6 +156,7 @@
             font-weight: 600;
             margin-bottom: 20px;
             line-height: 1.2;
+            color: #ffffff !important;
         }
         .page-hero-subtitle {
             font-family: var(--font-sans);
@@ -377,28 +378,32 @@
     <!-- Header (Navbar) -->
     <header class="main-header">
         <div class="container header-container">
-            <!-- Logo -->
-            <a href="../" class="logo">
-                <img src="../assets/logo-horizontal-advogado.png" alt="LUCAS GOUVEA Logo" class="logo-img">
+            <a href="../" class="logo-link" aria-label="Lucas Gouvea Advogado Home">
+                <img src="../assets/logo-horizontal-advogado.png" alt="Lucas Gouvea Advogado" class="logo-img">
             </a>
-
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" aria-label="Abrir Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-
-            <!-- Navigation -->
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="../">Home</a></li>
-                    <li><a href="../#sobre">Sobre o Escritório</a></li>
+            
+            <nav class="nav-desktop" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="../#sobre">Sobre</a></li>
                     <li><a href="../#atuacao">Áreas de Atuação</a></li>
+                    <li><a href="../#como-funciona">Como Funciona</a></li>
+                    <li><a href="../#faq">FAQ</a></li>
                     <li><a href="../blog/">Blog</a></li>
-                    <li><a href="../#contato" class="btn btn-outline">Fale com o Escritório</a></li>
+                    <li><a href="../#contato">Contato</a></li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <!-- CTA Header Button -->
+                <a href="../#contato" class="btn btn-darkblue btn-sm btn-header">Agendar Consulta</a>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
