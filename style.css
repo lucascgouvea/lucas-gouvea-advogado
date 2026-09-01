@@ -2463,3 +2463,24 @@ body.dark-mode .main-footer {
     .article-body { font-size: 1rem; }
     .article-body h2 { font-size: 1.8rem; }
 }
+
+
+/* Clickable Card Link Overrides */
+a.clickable-card {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+}
+a.clickable-card:focus {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 4px;
+}
+
+
+a.clickable-card:hover .service-link {
+    color: var(--color-gold);
+}
+a.clickable-card:hover .service-link svg {
+    transform: translateX(4px);
+}
+
