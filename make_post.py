@@ -1,0 +1,323 @@
+import re
+
+with open("blog/rmc-rcc-inss/index.html", "r") as f:
+    template = f.read()
+
+# Replace metadata
+template = template.replace(
+    "<title>RMC e RCC no INSS: o que são e como identificar o desconto | Lucas Gouvea</title>",
+    "<title>Golpe do Pix: o que fazer, como funciona o MED e quando o banco responde | Lucas Gouvea</title>"
+)
+template = template.replace(
+    '<meta name="description" content="Entenda o que é RMC, como ela difere do RCC, por que o desconto no benefício do INSS não acaba e quais documentos verificar antes de agir. Guia completo.">',
+    '<meta name="description" content="Golpe do Pix: os prazos reais do MED, o que o mecanismo do Banco Central não cobre e em que situações a Justiça reconhece a responsabilidade do banco.">'
+)
+template = template.replace(
+    '<meta name="last-verified" content="2026-08-31">',
+    '<meta name="last-verified" content="2026-09-01">'
+)
+template = template.replace(
+    'href="https://lgouvea.com/blog/rmc-rcc-inss/"',
+    'href="https://lgouvea.com/blog/golpe-do-pix-o-que-fazer/"'
+)
+template = template.replace(
+    'content="https://lgouvea.com/blog/rmc-rcc-inss/"',
+    'content="https://lgouvea.com/blog/golpe-do-pix-o-que-fazer/"'
+)
+template = template.replace(
+    '<meta property="og:title" content="RMC e RCC no INSS: o que são e como identificar o desconto">',
+    '<meta property="og:title" content="Golpe do Pix: o que fazer, como funciona o MED e quando o banco responde">'
+)
+template = template.replace(
+    '<meta property="og:description" content="Entenda o que é RMC, como ela difere do RCC, por que o desconto no benefício do INSS não acaba e quais documentos verificar antes de agir. Guia completo.">',
+    '<meta property="og:description" content="Golpe do Pix: os prazos reais do MED, o que o mecanismo do Banco Central não cobre e em que situações a Justiça reconhece a responsabilidade do banco.">'
+)
+
+schema_old = """"headline": "RMC e RCC no benefício do INSS: o que são, como identificar no extrato e o que fazer",
+      "description": "Entenda o que é RMC, como ela difere do RCC, por que o desconto no benefício do INSS não acaba e quais documentos verificar antes de agir. Guia completo.","""
+schema_new = """"headline": "Golpe do Pix: o que fazer nas primeiras horas e quando o banco responde pelo prejuízo",
+      "description": "Golpe do Pix: os prazos reais do MED, o que o mecanismo do Banco Central não cobre e em que situações a Justiça reconhece a responsabilidade do banco.","""
+template = template.replace(schema_old, schema_new)
+
+# Header
+header_old = """<h1 class="article-title" data-aos="fade-up">RMC e RCC no benefício do INSS: o que são, como identificar no extrato e o que fazer</h1>
+                
+                <div class="article-meta" data-aos="fade-up" data-aos-delay="100">
+                    <div class="article-meta-item">
+                        <i data-lucide="user"></i> Dr. Lucas Gouvea
+                    </div>
+                    <div class="article-meta-item">
+                        <i data-lucide="calendar"></i> 31 de Agosto, 2026
+                    </div>
+                    <div class="article-meta-item">
+                        <i data-lucide="clock"></i> 8 min de leitura
+                    </div>
+                    <div class="article-meta-item" style="margin-left:auto;">
+                        <span class="blog-category" style="margin:0;">Direito Bancário</span>
+                    </div>
+                </div>"""
+                
+header_new = """<h1 class="article-title" data-aos="fade-up">Golpe do Pix: o que fazer nas primeiras horas e quando o banco responde pelo prejuízo</h1>
+                
+                <div class="article-meta" data-aos="fade-up" data-aos-delay="100">
+                    <div class="article-meta-item">
+                        <i data-lucide="user"></i> Dr. Lucas Gouvea
+                    </div>
+                    <div class="article-meta-item">
+                        <i data-lucide="calendar"></i> 1º de Setembro, 2026
+                    </div>
+                    <div class="article-meta-item">
+                        <i data-lucide="clock"></i> 10 min de leitura
+                    </div>
+                    <div class="article-meta-item" style="margin-left:auto;">
+                        <span class="blog-category" style="margin:0;">Direito Bancário</span>
+                    </div>
+                </div>"""
+template = template.replace(header_old, header_new)
+
+# Body injection
+body_start = template.find('<div class="article-body">\n') + len('<div class="article-body">\n')
+body_end = template.find('            </div>\n\n            <!-- Botão de Voltar -->')
+
+new_content = """
+<p>Quem sofre um <strong>golpe do Pix</strong> descobre, em poucos minutos, uma diferença desconfortável entre o que imaginava e o que de fato acontece: não existe um botão de cancelamento, o dinheiro já está em outra conta e o atendimento do banco fala em prazos, protocolos e análise.</p>
+
+<div class="urgency-alert" style="background-color: rgba(214, 175, 103, 0.1); border-left: 4px solid var(--color-gold); padding: 20px; margin: 30px 0; border-radius: 4px;">
+    <strong>Se o golpe acabou de acontecer, abra a contestação no aplicativo do seu banco antes de continuar lendo.</strong> A chance de recuperação cai a cada hora, porque depende de haver saldo na conta de destino no momento do bloqueio.
+</div>
+
+<p>Existe, porém, um procedimento regulado pelo Banco Central para tentar reaver o valor. E existe, em paralelo, uma discussão jurídica sobre a responsabilidade da instituição financeira que não se resolve com a frase "o banco sempre tem que devolver".</p>
+
+<p>Este texto trata das duas coisas: o caminho administrativo, com os prazos reais, e o caminho judicial, com o que os tribunais vêm efetivamente decidindo em 2025 e 2026.</p>
+
+<h2>Por que o Pix mudou a natureza do problema</h2>
+
+<p>Antes do Pix, a fraude por transferência tinha atrito. TED e DOC dependiam de horário bancário, de compensação, de janelas em que era possível interceptar o valor.</p>
+
+<p>O pagamento instantâneo eliminou esse intervalo. <strong>O recurso é creditado na conta do fraudador em segundos e pode ser fragmentado e redistribuído por dezenas de contas antes que a vítima perceba o que aconteceu.</strong></p>
+
+<p>Foi para responder a isso que o Banco Central criou o <strong>Mecanismo Especial de Devolução (MED)</strong> e, mais recentemente, ampliou o mecanismo para permitir o rastreamento do dinheiro além da primeira conta de destino. É o que se convencionou chamar de MED 2.0: a partir da transação inicial, o sistema mapeia as transferências subsequentes e permite bloquear recursos também nas contas usadas para dispersar o valor.</p>
+
+<p>Isso muda a expectativa realista de recuperação. Não a torna automática — mas deixou de ser verdade que o dinheiro está perdido assim que sai da conta de destino original.</p>
+
+<h2>As cinco modalidades que mais chegam ao Judiciário</h2>
+
+<p>A distinção entre elas não é curiosidade. <strong>Cada modalidade produz um conjunto diferente de provas e um argumento jurídico diferente.</strong> Descrever o caso corretamente é a primeira decisão técnica de quem vai discutir o prejuízo.</p>
+
+<h3>Falsa central de atendimento</h3>
+
+<p>O criminoso liga de um número que aparenta ser do banco, cita dados pessoais reais da vítima — normalmente obtidos em vazamentos anteriores — e informa que há uma operação suspeita em andamento. Sob pressão, a vítima é orientada a "proteger o dinheiro" transferindo para uma conta indicada, ou a fornecer credenciais e códigos de confirmação.</p>
+
+<p>É a modalidade mais litigada e a que produziu os precedentes mais importantes do STJ nos últimos dois anos.</p>
+
+<h3>Falso estorno (o golpe que atinge quem vende)</h3>
+
+<p>O criminoso envia um Pix legítimo para um comerciante ou prestador de serviço e, em seguida, entra em contato alegando erro: pede a devolução do valor total ou da diferença, sempre por uma <strong>nova transferência</strong> para uma chave que ele indica.</p>
+
+<p>Feita a devolução, o golpista aciona a contestação da transação original e recebe o valor de volta pelo próprio mecanismo do Banco Central. O comerciante fica com dois prejuízos.</p>
+
+<p><strong>A defesa contra essa modalidade é comportamental e simples:</strong> quando alguém pede devolução por engano, o caminho é usar a função de devolução vinculada à transação original, dentro do aplicativo, e nunca fazer uma nova transferência para uma chave informada por terceiro.</p>
+
+<h3>Invasão de conta e acesso remoto</h3>
+
+<p>A vítima instala, por orientação de um suposto funcionário do banco, um aplicativo de suporte remoto, ou tem o aparelho comprometido. As operações passam a ser executadas pelo criminoso, com as credenciais da própria vítima.</p>
+
+<p>Aqui é comum que o golpe não se limite a transferências: <strong>frequentemente há aumento de limite, resgate de aplicações e contratação de empréstimo em nome da vítima</strong>, tudo na mesma sessão.</p>
+
+<h3>Falso anúncio e falsa venda</h3>
+
+<p>Pagamento por produto ou serviço que nunca é entregue, ou que é entregue de forma completamente diversa do anunciado. Enquadra-se no mecanismo de devolução quando há fraude do vendedor — mas não quando se trata de desacordo comercial.</p>
+
+<p>A fronteira entre as duas coisas é justamente o ponto que costuma travar o pedido administrativo.</p>
+
+<h3>Coerção e roubo do celular</h3>
+
+<p>Transferências realizadas sob ameaça, ou executadas pelo criminoso após a subtração do aparelho com obtenção da senha. Também estão dentro do escopo do mecanismo de devolução, e exigem registro policial pela natureza criminal autônoma do fato.</p>
+
+<p><em>Existem também golpes que se passam por profissionais do processo solicitando transferências para pagamento de custas falsas. Em todas as variações, o mecanismo de devolução funciona da mesma forma.</em></p>
+
+<h2>As primeiras horas: a ordem correta das providências</h2>
+
+<p>A ordem importa mais do que parece. <strong>A probabilidade de recuperação depende de existir saldo na conta de destino no momento do bloqueio</strong> — e esse saldo tende a zero rapidamente.</p>
+
+<ol>
+    <li><strong>Abra a contestação pelo aplicativo do seu banco, imediatamente.</strong> Todos os participantes do Pix são obrigados a oferecer, dentro do ambiente Pix do app, uma funcionalidade de autoatendimento que permite contestar uma transação por golpe, fraude ou crime, sem depender de atendimento humano. Selecione a transação, indique o tipo de golpe e registre.</li>
+    <li><strong>Anote o número de protocolo.</strong> Ele é a prova de que você acionou o mecanismo e de quando acionou.</li>
+    <li><strong>Não espere para reunir documentos.</strong> A regulamentação é explícita: no momento da abertura, a instituição não deve analisar o mérito da reclamação nem exigir comprovação, como boletim de ocorrência. A análise vem depois. Qualquer atendimento que condicione a abertura à apresentação de documentos está fora da norma.</li>
+    <li><strong>Feche as portas ainda abertas.</strong> Troque as senhas, revise os dispositivos autorizados, desinstale qualquer aplicativo instalado durante o contato e verifique se há sessões ativas.</li>
+    <li><strong>Confira se houve mais do que transferências.</strong> Procure, no extrato e na área de crédito do aplicativo, empréstimos contratados, aumento de limite, resgate de investimentos e compras no cartão nas mesmas horas. É frequente que essa parte só seja percebida dias depois.</li>
+    <li><strong>Registre boletim de ocorrência.</strong> Não é requisito para abrir a contestação, mas é peça relevante para o processo judicial e para a persecução criminal. Nos crimes de estelionato praticados mediante transferência de valores (conforme a <a href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14155.htm" target="_blank" rel="noopener noreferrer">Lei nº 14.155/2021</a>), a competência é definida pelo domicílio da vítima.</li>
+    <li><strong>Se o banco não resolver, registre reclamação no Banco Central e na plataforma consumidor.gov.br.</strong> São canais distintos da via judicial e produzem registro documental útil.</li>
+    <li><strong>Guarde tudo.</strong> Prints das conversas, número de origem das ligações, notificações do aplicativo, comprovantes, protocolos e o horário exato de cada evento.</li>
+</ol>
+
+<h2>O que é o Mecanismo Especial de Devolução</h2>
+
+<p>O MED é o conjunto de regras que autoriza uma instituição participante do Pix a <strong>bloquear e debitar recursos da conta de um cliente sem pedir autorização a cada devolução</strong>, quando há fundada suspeita de fraude ou falha operacional.</p>
+
+<p>O fluxo, na prática, funciona assim: sua instituição abre uma Recuperação de Valores; o sistema do Banco Central rastreia o caminho do dinheiro e gera notificações para as instituições que receberam os recursos; essas instituições bloqueiam o valor; cada uma analisa se o próprio cliente cometeu a fraude; havendo confirmação, a devolução é executada.</p>
+
+<p>Vale registrar um ponto pouco divulgado: quando uma instituição aceita a notificação de infração, <strong>a chave Pix do usuário envolvido passa a ser bloqueada automaticamente</strong>, e a marcação de fraude fica visível para todos os participantes do arranjo.</p>
+
+<h3>Os prazos que o Banco Central estabelece</h3>
+
+<div class="table-responsive">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Etapa</th>
+                <th>Prazo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Abrir a contestação, contado da transação</td>
+                <td>até 80 dias</td>
+            </tr>
+            <tr>
+                <td>Análise pelas instituições que receberam os recursos</td>
+                <td>7 dias corridos</td>
+            </tr>
+            <tr>
+                <td>Início da devolução pela sua instituição, após a análise</td>
+                <td>até 72 horas</td>
+            </tr>
+            <tr>
+                <td>Execução da devolução por cada instituição envolvida</td>
+                <td>até 6 horas</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>Há ainda o <strong>bloqueio cautelar</strong>: independentemente de qualquer contestação, a instituição que recebe o recurso pode bloqueá-lo por até 72 horas quando identifica suspeita de fraude, para análise mais detida.</p>
+
+<p>Um alerta sobre expectativa: <strong>os prazos regulam o procedimento, não garantem o resultado.</strong> Se não houver saldo na conta de destino, a solicitação é rejeitada por ausência de fundos, e a instituição não é obrigada a devolver com recursos próprios (conforme o <a href="https://www.bcb.gov.br/content/estabilidadefinanceira/pix/Guia_MED.pdf" target="_blank" rel="noopener noreferrer">Guia do MED publicado pelo Banco Central</a>). Daí a insistência na velocidade.</p>
+
+<h3>O que o MED não cobre</h3>
+
+<p>Este é o ponto que mais gera frustração, e o que praticamente nenhum conteúdo disponível explica com honestidade:</p>
+
+<ul>
+    <li><strong>Desacordo comercial.</strong> Produto entregue fora do prazo, diferente do esperado ou que não agradou não é fraude. Essas controvérsias se resolvem na esfera judicial comum.</li>
+    <li><strong>Recursos que chegaram a um terceiro de boa-fé.</strong> Se o dinheiro do golpe foi usado para comprar de um vendedor honesto, esse vendedor não pode ter a conta debitada.</li>
+    <li><strong>Erro do próprio usuário.</strong> Chave errada, valor errado, transferência duplicada ou arrependimento não são hipóteses de MED.</li>
+</ul>
+
+<p>A consequência prática é direta: <strong>o MED não é um chargeback de cartão.</strong> No cartão, basta o titular não reconhecer a compra. No Pix, é preciso demonstrar que quem recebeu o dinheiro foi o autor da fraude.</p>
+
+<h2>A mudança que entrou em vigor em 1º de setembro de 2026</h2>
+
+<p>A partir desta data, o prazo para contestar uma devolução realizada pelo MED, quando há suspeita de que o próprio pagador agiu de má-fé, passou de 30 para 80 dias, por alteração do Manual Operacional do DICT promovida pela Instrução Normativa BCB nº 766.</p>
+
+<p>Na prática, o sistema passou a ter dois prazos de 80 dias com finalidades distintas: <strong>um para a vítima de golpe contestar a transferência original, contado da transação; outro para quem recebeu um Pix legítimo e teve o valor retirado por contestação fraudulenta, contado da devolução.</strong></p>
+
+<p>O alvo declarado da mudança é exatamente o golpe do falso estorno. Até então, o comerciante lesado tinha uma janela curta para perceber que a devolução que sofreu era parte do golpe, e não a correção de um erro.</p>
+
+<p><em>* Informação verificada em 1º de setembro de 2026. A regulamentação do Pix é revista com frequência; confira a versão vigente do Guia do MED antes de agir com base em prazos.</em></p>
+
+<h2>Quando o banco responde pelo prejuízo</h2>
+
+<p>Aqui a resposta honesta é: depende — e o "depende" tem critérios identificáveis.</p>
+
+<h3>A Súmula 479 não se aplica automaticamente</h3>
+
+<p>A Súmula 479 do STJ estabelece que as instituições financeiras respondem objetivamente por danos gerados por fortuito interno relativo a fraudes praticadas por terceiros no âmbito de operações bancárias. O mesmo entendimento foi firmado em recurso repetitivo, no Tema 466.</p>
+
+<p>Ocorre que a Terceira Turma do STJ, em julgamento de junho de 2026 (REsp 2.209.868/SP, relator ministro Humberto Martins), <a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/15072026-Terceira-Turma-afasta-responsabilidade-de-banco-por-transferencia-feita-por-cliente-vitima-de-golpe.aspx" target="_blank" rel="noopener noreferrer">afastou expressamente a incidência automática desses precedentes</a>. A responsabilidade objetiva (prevista no <a href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm" target="_blank" rel="noopener noreferrer">artigo 14 do Código de Defesa do Consumidor</a>) pressupõe que o evento seja inerente ao serviço bancário — ou seja, que exista fortuito interno. A ocorrência da fraude, isoladamente, não basta.</p>
+
+<p>No caso julgado, a vítima recebeu ligação de falsa central, fez duas transferências por Pix e, no dia seguinte, compareceu pessoalmente à agência para transferir um valor muito superior, sem pedir esclarecimento aos funcionários presentes. O tribunal de origem concluiu que as duas primeiras operações eram compatíveis com o histórico da conta e que não houve defeito do serviço. O STJ manteve a decisão.</p>
+
+<h3>O dever de identificar o que destoa do perfil da conta</h3>
+
+<p>O eixo oposto da jurisprudência é igualmente firme, e foi consolidado no <strong>REsp 2.222.059/SP</strong>, também da Terceira Turma, relatado pelo ministro Ricardo Villas Bôas Cueva e julgado em outubro de 2025.</p>
+
+<p>Nesse precedente, o STJ afirmou que criar e aprimorar continuamente mecanismos capazes de identificar e coibir fraudes é atribuição das instituições — e estendeu esse dever, expressamente, também às <strong>instituições de pagamento</strong>, e não apenas aos bancos tradicionais.</p>
+
+<p>O acórdão indica os fatores que um sistema antifraude deve considerar: operações que fogem ao perfil ou ao padrão de consumo do cliente, horário e local, intervalo entre uma operação e outra, sequência das operações, meio utilizado e — ponto especialmente relevante — <strong>contratação de empréstimos atípicos imediatamente antes de pagamentos suspeitos</strong>.</p>
+
+<p>A leitura combinada dos dois precedentes produz um critério prático:</p>
+
+<blockquote style="border-left: 4px solid var(--color-gold); padding: 15px; background: rgba(214, 175, 103, 0.05); font-style: italic; margin: 20px 0;">
+    A discussão não é sobre quem digitou a senha. É sobre se a sequência de operações deveria ter acionado o sistema de segurança da instituição.
+</blockquote>
+
+<p>Quatro empréstimos e sete transferências no mesmo dia, em uma conta historicamente usada como poupança, é um cenário. Duas transferências de valor compatível com a rotina da conta é outro. <strong>A mesma modalidade de golpe pode gerar resultados opostos conforme o perfil transacional da conta atingida.</strong></p>
+
+<h3>A conduta da vítima entra na análise</h3>
+
+<p>O STJ tem examinado se a vítima foi induzida por técnica de persuasão sofisticada ou se atuou de modo manifestamente irrazoável. Comparecer pessoalmente a uma agência e realizar a transferência sem perguntar nada ao gerente foi tratado, no precedente de 2026, como elemento capaz de romper o nexo causal.</p>
+
+<p>Isso não significa que a vítima seja culpada pelo golpe. Significa que <strong>a narrativa do caso, documentada com precisão, é parte do mérito</strong> — e não um detalhe periférico.</p>
+
+<h2>Empréstimo contratado durante o golpe é um problema separado</h2>
+
+<p>Vale isolar essa hipótese, porque ela costuma ser tratada como acessória e não é.</p>
+
+<p>Quando o criminoso, além de transferir o saldo, contrata um empréstimo em nome da vítima, existem <strong>duas pretensões distintas</strong>: a devolução dos valores transferidos e a declaração de inexistência do contrato de crédito, com a suspensão das parcelas. Trata-se de um <a href="../../blog/rmc-rcc-inss/">empréstimo que o titular não reconhece</a>, diferente da autorização da transferência em si.</p>
+
+<p>São causas de pedir diferentes, com fundamentos diferentes e, frequentemente, com resultados diferentes no mesmo processo. <strong>A contratação de crédito atípico em conta que não tinha esse histórico é, por si, um dos indicadores que o STJ apontou como devendo acionar os mecanismos de segurança da instituição.</strong></p>
+
+<p>Se o desconto já começou, o problema deixa de ser apenas a recuperação do que se perdeu e passa a ser também a interrupção de um prejuízo que se renova todo mês.</p>
+
+<h2>Como montar a prova antes de discutir o mérito</h2>
+
+<p>Casos de fraude eletrônica se ganham ou se perdem na instrução, nas instâncias ordinárias. O STJ não reexamina fatos e provas. <strong>O que ficar registrado em primeiro e segundo grau é o que vale.</strong></p>
+
+<p>O que reunir:</p>
+
+<ul>
+    <li><strong>Extrato completo dos 90 dias anteriores ao golpe.</strong> Serve para demonstrar qual era o perfil normal da conta — a base de comparação de toda a discussão sobre atipicidade.</li>
+    <li><strong>Extrato do dia do golpe, minuto a minuto.</strong> Sequência, horários, valores, destinatários repetidos.</li>
+    <li><strong>Protocolo da contestação e horário de abertura.</strong> Demonstra a diligência da vítima e permite discutir eventual demora da instituição.</li>
+    <li><strong>Registro de todo o contato com o banco.</strong> Números de protocolo, respostas escritas, negativas e sua fundamentação.</li>
+    <li><strong>Prova do contato do fraudador.</strong> Número de origem, prints, e-mails, mensagens, gravações, anúncio, perfil.</li>
+    <li><strong>Comprovação de operações de crédito e de limite.</strong> Contratos gerados, alterações de limite, resgates.</li>
+    <li><strong>Boletim de ocorrência e reclamações registradas</strong> no Banco Central e no consumidor.gov.br.</li>
+</ul>
+
+<p>Uma observação sobre o que não fazer: <strong>não descreva o ocorrido de forma genérica na contestação inicial.</strong> O tipo de golpe informado no registro define a classificação da ocorrência no sistema do Banco Central e será confrontado com a versão apresentada depois em juízo. Divergência entre as duas narrativas é o primeiro ponto que a defesa da instituição vai explorar.</p>
+
+<h2>Perguntas frequentes sobre golpe do Pix</h2>
+
+<h3>Preciso de boletim de ocorrência para abrir a contestação?</h3>
+
+<p>Não. A regulamentação determina que a instituição abra o procedimento imediatamente após a reclamação, <strong>sem analisar o mérito e sem exigir documentos comprobatórios</strong> nesse momento. O boletim de ocorrência continua importante para outras finalidades, mas não pode ser condição para o registro da contestação.</p>
+
+<h3>Perdi o prazo do MED. Ainda posso fazer alguma coisa?</h3>
+
+<p>Sim. O prazo de 80 dias é do procedimento administrativo do Pix, não da pretensão indenizatória. <strong>A perda do prazo administrativo não extingue o direito de discutir judicialmente a responsabilidade da instituição</strong> — apenas elimina o caminho mais rápido de recuperação e reduz a chance de encontrar saldo bloqueável.</p>
+
+<h3>Recebi um Pix e minha conta foi bloqueada. O que fazer?</h3>
+
+<p>Essa é a posição inversa, e é mais comum do que se imagina — atinge especialmente quem vende. A instituição que recebe o recurso pode bloqueá-lo cautelarmente por até 72 horas, ou por até 7 dias quando há notificação de infração em análise.</p>
+
+<p>Enquanto o bloqueio cautelar está em curso, o recebedor pode devolver espontaneamente o valor da transação original, o que preserva o negócio e permite refazer o pagamento por outro meio. <strong>Se você tem prova de que a operação subjacente foi legítima, apresente-a imediatamente à sua instituição</strong>, porque a análise ocorre dentro desses prazos curtos e a aceitação da notificação gera marcação de fraude no seu CPF ou CNPJ.</p>
+
+<h3>Onde reclamar se o banco não resolver?</h3>
+
+<p>O aplicativo do banco deve oferecer, no próprio ambiente Pix, atalho para o canal de atendimento e informação sobre o registro de reclamação no site do Banco Central. Além disso, existe a plataforma consumidor.gov.br. <strong>Nenhum desses canais substitui a via judicial</strong>, mas todos produzem registro documental da tentativa de solução e da resposta obtida.</p>
+
+<h2>Quando vale procurar orientação jurídica</h2>
+
+<p>Nem todo caso demanda ação judicial. Quando o valor é recuperado pelo mecanismo administrativo em poucos dias, o problema se encerra ali.</p>
+
+<p>A análise individualizada tende a fazer diferença em três situações: quando o mecanismo administrativo foi acionado e o valor não retornou; quando houve contratação de crédito ou movimentação claramente incompatível com o histórico da conta; e quando o prejuízo envolve pessoa idosa ou em situação de vulnerabilidade, hipótese em que o dever de cuidado da instituição é examinado com rigor maior.</p>
+
+<p>Se você passou por um golpe do Pix e já esgotou o caminho administrativo, o passo seguinte é reunir extratos, protocolos e o registro do contato com a instituição para uma análise individualizada dos fatos. Veja <a href="../../#como-funciona?utm_source=blog&utm_medium=artigo&utm_campaign=golpe-do-pix-o-que-fazer">como funciona a análise documental do escritório</a> ou conheça a <a href="../../direito-bancario-sao-carlos/?utm_source=blog&utm_medium=artigo&utm_campaign=golpe-do-pix-o-que-fazer">atuação em fraudes e operações bancárias não reconhecidas</a>.</p>
+
+<author-block></author-block>
+
+<div class="article-cta" style="background-color: var(--bg-light); padding: 40px; border-radius: 8px; border-left: 6px solid #D6AF67; margin-top: 50px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+    <h2 style="margin-top: 0; font-size: 1.8rem; border-bottom: none; padding-bottom: 0;">Precisa analisar um caso de fraude bancária?</h2>
+    <p style="margin-bottom: 20px;">Envie uma mensagem descrevendo a situação. Nossa equipe faz uma análise técnica preliminar dos documentos sem custo.</p>
+    <a href="https://wa.me/5516936180178?text=Ol%C3%A1%2C%20li%20o%20artigo%20sobre%20golpe%20do%20Pix%20e%20gostaria%20de%20uma%20an%C3%A1lise%20do%20meu%20caso." target="_blank" rel="noopener noreferrer" class="btn btn-darkblue">
+        Falar com a equipe
+    </a>
+</div>
+"""
+
+new_template = template[:body_start] + new_content + template[body_end:]
+
+with open("blog/golpe-do-pix-o-que-fazer/index.html", "w") as f:
+    f.write(new_template)

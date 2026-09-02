@@ -1,5 +1,17 @@
 const blogPosts = [
     {
+        id: "golpe-do-pix",
+        category: "Direito Bancário",
+        title: "Golpe do Pix: o que fazer, como funciona o MED e quando o banco responde",
+        excerpt: "Os prazos reais do MED, o que o mecanismo do Banco Central não cobre e em que situações a Justiça reconhece a responsabilidade do banco.",
+        date: "2026-09-01",
+        dateDisplay: "1 Set, 2026",
+        readTime: "10 min leitura",
+        url: "golpe-do-pix-o-que-fazer/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
+    },
+    {
         id: "rmc-rcc-inss",
         category: "Direito Bancário",
         title: "RMC e RCC no INSS: o que são e como identificar o desconto",
