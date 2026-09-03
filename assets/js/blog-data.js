@@ -1,5 +1,17 @@
 const blogPosts = [
     {
+        id: "churning-consignado",
+        category: "Direito Bancário",
+        title: "Churning no Consignado do INSS: Por Que a Dívida Não Acaba",
+        excerpt: "Refinanciamento sucessivo pode transformar um consignado em dívida sem fim. Entenda como identificar churning no extrato do INSS e o que a lei diz.",
+        date: "2026-09-03",
+        dateDisplay: "3 Set, 2026",
+        readTime: "6 min leitura",
+        url: "churning-consignado-inss/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>'
+    },
+    {
         id: "golpe-do-pix",
         category: "Direito Bancário",
         title: "Golpe do Pix: o que fazer, como funciona o MED e quando o banco responde",
