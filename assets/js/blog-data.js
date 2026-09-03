@@ -2,7 +2,7 @@ const blogPosts = [
     {
         id: "churning-consignado",
         category: "Direito Bancário",
-        title: "Churning no Consignado do INSS: Por Que a Dívida Não Acaba",
+        title: "Empréstimo Consignado Que Nunca Termina: Entenda o Churning",
         excerpt: "Refinanciamento sucessivo pode transformar um consignado em dívida sem fim. Entenda como identificar churning no extrato do INSS e o que a lei diz.",
         date: "2026-09-03",
         dateDisplay: "3 Set, 2026",
