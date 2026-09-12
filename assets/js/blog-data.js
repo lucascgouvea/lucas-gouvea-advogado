@@ -2,7 +2,7 @@ const blogPosts = [
     {
         id: "revisional-financiamento",
         category: "Direito Bancário",
-        title: "Revisional de financiamento de veículo: o que dá para rever",
+        title: "Juros De Financiamento De Veículo: O Que Pode Ser Revisto?",
         excerpt: "Entenda o que uma revisional de financiamento de veículo pode discutir: juros, tarifas, seguro e encargos, e o que a ação não resolve na prática.",
         date: "2026-09-12",
         dateDisplay: "12 Set, 2026",
