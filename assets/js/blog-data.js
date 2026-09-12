@@ -1,5 +1,17 @@
 const blogPosts = [
     {
+        id: "extrato-consignado",
+        category: "Direito Bancário",
+        title: "Extrato de empréstimo consignado do INSS: como ler",
+        excerpt: "Como emitir o extrato de empréstimo consignado do INSS (HISCON) e o que cada campo significa: contratos, margem, refinanciamentos e descontos.",
+        date: "2026-09-12",
+        dateDisplay: "12 Set, 2026",
+        readTime: "8 min leitura",
+        url: "extrato-emprestimo-consignado-inss/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
+    },
+    {
         id: "churning-consignado",
         category: "Direito Bancário",
         title: "Empréstimo Consignado Que Nunca Termina: Entenda o Churning",
