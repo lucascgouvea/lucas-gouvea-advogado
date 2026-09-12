@@ -1,5 +1,17 @@
 const blogPosts = [
     {
+        id: "revisional-financiamento",
+        category: "Direito Bancário",
+        title: "Revisional de financiamento de veículo: o que dá para rever",
+        excerpt: "Entenda o que uma revisional de financiamento de veículo pode discutir: juros, tarifas, seguro e encargos, e o que a ação não resolve na prática.",
+        date: "2026-09-12",
+        dateDisplay: "12 Set, 2026",
+        readTime: "8 min leitura",
+        url: "revisional-financiamento-veiculo/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+    {
         id: "extrato-consignado",
         category: "Direito Bancário",
         title: "Extrato de empréstimo consignado do INSS: como ler",
