@@ -2,7 +2,7 @@ const blogPosts = [
     {
         id: "busca-apreensao",
         category: "Direito Bancário",
-        title: "Busca e Apreensão de Veículo: o Que Fazer ao Ser Citado",
+        title: "Busca e apreensão de veículo: o que fazer ao ser citado",
         excerpt: "Foi citado em ação de busca e apreensão de veículo? Entenda os prazos legais, o que é purgar a mora e quando contestar faz sentido no seu caso.",
         date: "2026-09-17",
         dateDisplay: "17 Set, 2026",
