@@ -1,5 +1,17 @@
 const blogPosts = [
     {
+        id: "busca-apreensao",
+        category: "Direito Bancário",
+        title: "Busca e Apreensão de Veículo: o Que Fazer ao Ser Citado",
+        excerpt: "Foi citado em ação de busca e apreensão de veículo? Entenda os prazos legais, o que é purgar a mora e quando contestar faz sentido no seu caso.",
+        date: "2026-09-17",
+        dateDisplay: "17 Set, 2026",
+        readTime: "7 min leitura",
+        url: "busca-e-apreensao-veiculo/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+    {
         id: "revisional-financiamento",
         category: "Direito Bancário",
         title: "Juros De Financiamento De Veículo: O Que Pode Ser Revisto?",
