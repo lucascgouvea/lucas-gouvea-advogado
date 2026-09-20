@@ -2,7 +2,7 @@ const blogPosts = [
     {
         id: "conta-aberta-documento-falso",
         category: "Direito Bancário",
-        title: "Conta aberta com documento falso no seu nome: o que fazer",
+        title: "Conta aberta com documento falso: o que exigir do banco",
         excerpt: "Conta aberta com documento falso: como localizar o registro no Registrato, o que exigir do banco antes de encerrar a conta e quando a instituição responde.",
         date: "2026-09-20",
         dateDisplay: "20 Set, 2026",
