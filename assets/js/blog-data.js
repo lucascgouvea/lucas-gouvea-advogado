@@ -1,5 +1,17 @@
 const blogPosts = [
     {
+        id: "conta-aberta-documento-falso",
+        category: "Direito Bancário",
+        title: "Conta aberta com documento falso no seu nome: o que fazer",
+        excerpt: "Conta aberta com documento falso: como localizar o registro no Registrato, o que exigir do banco antes de encerrar a conta e quando a instituição responde.",
+        date: "2026-09-20",
+        dateDisplay: "20 Set, 2026",
+        readTime: "9 min leitura",
+        url: "conta-aberta-com-documento-falso/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+    {
         id: "busca-apreensao",
         category: "Direito Bancário",
         title: "Busca e apreensão de veículo: o que fazer ao ser citado",
