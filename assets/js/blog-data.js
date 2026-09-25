@@ -1,5 +1,15 @@
 const blogPosts = [
     {
+        id: "acao-de-despejo",
+        category: "Direito Imobiliário",
+        title: "Ação de despejo: quando cabe e como funciona o processo",
+        excerpt: "Inquilino não paga ou o contrato acabou e ele não sai? Entenda quando cabe ação de despejo, como funciona a liminar e o que locador e inquilino devem saber.",
+        date: "2026-09-25",
+        dateDisplay: "25 Set, 2026",
+        link: "acao-de-despejo/"
+    },
+
+    {
         id: "conta-aberta-documento-falso",
         category: "Direito Bancário",
         title: "Conta aberta com documento falso: o que exigir do banco",
