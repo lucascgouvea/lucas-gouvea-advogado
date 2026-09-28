@@ -1,5 +1,18 @@
 const blogPosts = [
     {
+        id: "emprestimo-feito-por-golpista",
+        category: "Direito Bancário",
+        title: "Empréstimo feito por golpista: quando o banco responde",
+        excerpt: "Empréstimo feito por golpista: quando a dívida é cancelada, se é preciso devolver o valor creditado e como provar que a operação fugiu do seu perfil.",
+        date: "2026-09-28",
+        dateDisplay: "28 Set, 2026",
+        readTime: "14 min leitura",
+        url: "emprestimo-feito-por-golpista/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>'
+    },
+
+    {
         id: "cobranca-indevida-cesta-de-servicos",
         category: "Direito Bancário",
         title: "Cobrança indevida de cesta de serviços na conta bancária",
