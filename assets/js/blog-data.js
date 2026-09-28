@@ -1,5 +1,18 @@
 const blogPosts = [
     {
+        id: "cobranca-indevida-cesta-de-servicos",
+        category: "Direito Bancário",
+        title: "Cobrança indevida de cesta de serviços na conta bancária",
+        excerpt: "Cobrança indevida de cesta de serviços: quando o banco pode cobrar, como provar, como pedir a devolução e o que muda na conta de benefício do INSS.",
+        date: "2026-09-28",
+        dateDisplay: "28 Set, 2026",
+        readTime: "13 min leitura",
+        url: "cobranca-indevida-cesta-de-servicos/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+
+    {
         id: "clausulas-abusivas-contrato-de-locacao",
         category: "Direito Imobiliário",
         title: "Cláusulas abusivas no contrato de aluguel: o que é nulo e o que vale",
