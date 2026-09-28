@@ -1,5 +1,18 @@
 const blogPosts = [
     {
+        id: "clausulas-abusivas-contrato-de-locacao",
+        category: "Direito Imobiliário",
+        title: "Cláusulas abusivas no contrato de aluguel: o que é nulo e o que vale",
+        excerpt: "Multa integral, fiador e caução juntos, taxa de contrato, pintura nova: veja quais cláusulas do aluguel a lei anula, quais valem e o que fazer.",
+        date: "2026-09-28",
+        dateDisplay: "28 Set, 2026",
+        readTime: "15 min leitura",
+        url: "clausulas-abusivas-contrato-de-locacao/",
+        iconClass: "a-card-banner-direito-imobiliario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>'
+    },
+
+    {
         id: "distrato-imovel-na-planta",
         category: "Direito Imobiliário",
         title: "Distrato de imóvel na planta: quanto se recebe de volta",
