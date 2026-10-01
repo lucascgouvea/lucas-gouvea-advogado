@@ -1,5 +1,18 @@
 const blogPosts = [
     {
+        id: "divida-de-bets",
+        category: "Direito Bancário",
+        title: "Dívida de bets: o que o banco pode cobrar e o que discutir",
+        excerpt: "Dívida de bets com o banco continua valendo? Entenda o art. 815 do Código Civil, o superendividamento, o Pix crédito e o que muda com a proibição das bets.",
+        date: "2026-10-01",
+        dateDisplay: "1 Out, 2026",
+        readTime: "15 min leitura",
+        url: "divida-de-bets/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+
+    {
         id: "emprestimo-feito-por-golpista",
         category: "Direito Bancário",
         title: "Empréstimo feito por golpista: quando o banco responde",
