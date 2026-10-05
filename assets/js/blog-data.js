@@ -1,5 +1,18 @@
 const blogPosts = [
     {
+        id: "o-que-e-rcc-inss",
+        category: "Direito Bancário",
+        title: "O que é RCC no INSS (Reserva de Cartão Consignado)",
+        excerpt: "RCC é a Reserva de Cartão Consignado: a parte do benefício do INSS reservada para pagar o cartão consignado de benefício. Veja como achar no extrato.",
+        date: "2026-10-05",
+        dateDisplay: "5 Out, 2026",
+        readTime: "4 min leitura",
+        url: "o-que-e-rcc-inss/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="16" x2="6.01" y2="16"/></svg>'
+    },
+
+    {
         id: "divida-de-bets",
         category: "Direito Bancário",
         title: "Dívida de bets: o que o banco pode cobrar e o que discutir",

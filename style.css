@@ -2625,3 +2625,30 @@ body.dark-mode .article-table tbody tr:nth-of-type(even) {
         grid-template-columns: 1fr;
     }
 }
+
+/* Imagens dentro dos artigos do blog */
+.article-figure {
+    margin: 36px auto;
+    max-width: 680px;
+    text-align: center;
+}
+
+.article-figure a {
+    display: block;
+}
+
+.article-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow-premium);
+}
+
+.article-figure figcaption {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
