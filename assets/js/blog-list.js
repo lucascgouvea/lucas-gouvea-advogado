@@ -4,6 +4,9 @@ class BlogList extends HTMLElement {
     }
 
     render() {
+        // Se a lista já veio pronta no HTML (tools/prerender_blog.py), redesenha sem animação
+        const prerendered = this.children.length > 0;
+
         // Sort by date descending
         const sortedPosts = blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -11,7 +14,7 @@ class BlogList extends HTMLElement {
         sortedPosts.forEach((post, index) => {
             const delay = (index + 1) * 50;
             html += `
-                <article class="a-card" data-aos="fade-up" data-aos-delay="${delay}">
+                <article class="a-card"${prerendered ? '' : ` data-aos="fade-up" data-aos-delay="${delay}"`}>
                     <div class="a-card-banner ${post.iconClass}">
                         <div class="a-card-banner-icon">
                             ${post.svgIcon}

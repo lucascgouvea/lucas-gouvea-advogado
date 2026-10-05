@@ -1,5 +1,109 @@
 const blogPosts = [
     {
+        id: "o-que-e-rmc-inss",
+        category: "Direito Bancário",
+        title: "O que é RMC no INSS (Reserva de Margem Consignável)",
+        excerpt: "Entenda o que é RMC no INSS: a parte do benefício reservada ao cartão de crédito consignado. Veja como achar no extrato e o que conferir.",
+        date: "2026-10-05",
+        dateDisplay: "5 Out, 2026",
+        readTime: "4 min leitura",
+        url: "o-que-e-rmc-inss/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="16" x2="6.01" y2="16"/></svg>'
+    },
+
+    {
+        id: "bloquear-beneficio-inss-emprestimo-consignado",
+        category: "Direito Bancário",
+        title: "Como bloquear o benefício do INSS para empréstimo consignado",
+        excerpt: "Bloqueie o benefício do INSS para empréstimo consignado pelo Meu INSS, sem sair de casa. Veja o passo a passo e como desbloquear depois.",
+        date: "2026-10-05",
+        dateDisplay: "5 Out, 2026",
+        readTime: "5 min leitura",
+        url: "bloquear-beneficio-inss-emprestimo-consignado/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
+    },
+
+    {
+        id: "emprestimo-consignado-nao-reconhecido-inss",
+        category: "Direito Bancário",
+        title: "Empréstimo consignado que não reconheço no INSS: o que fazer",
+        excerpt: "Encontrou no INSS um empréstimo consignado que não reconhece? Veja como confirmar, pedir a exclusão, guardar provas e evitar erros.",
+        date: "2026-10-05",
+        dateDisplay: "5 Out, 2026",
+        readTime: "7 min leitura",
+        url: "emprestimo-consignado-nao-reconhecido-inss/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>'
+    },
+
+    {
+        id: "como-cancelar-cartao-consignado",
+        category: "Direito Bancário",
+        title: "Como cancelar o cartão consignado (RMC ou RCC)",
+        excerpt: "Cancele o cartão consignado (RMC ou RCC) sem perder provas: o que pedir ao banco antes, como quitar o saldo e quando o desconto para.",
+        date: "2026-10-05",
+        dateDisplay: "5 Out, 2026",
+        readTime: "6 min leitura",
+        url: "como-cancelar-cartao-consignado/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="16" x2="6.01" y2="16"/></svg>'
+    },
+
+    {
+        id: "refinanciamento-portabilidade-consignado-inss",
+        category: "Direito Bancário",
+        title: "Refinanciamento e portabilidade de consignado: como identificar no extrato",
+        excerpt: "Descubra se o seu consignado foi refinanciado ou levado para outro banco: os campos do extrato do INSS que mostram a troca de contrato.",
+        date: "2026-10-05",
+        dateDisplay: "5 Out, 2026",
+        readTime: "6 min leitura",
+        url: "refinanciamento-portabilidade-consignado-inss/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
+    },
+
+    {
+        id: "o-que-e-med-pix",
+        category: "Direito Bancário",
+        title: "O que é o MED do Pix e qual o prazo para pedir a devolução",
+        excerpt: "Saiba o que é o MED do Pix, como pedir a devolução no aplicativo do banco e o prazo de 80 dias para contestar uma transferência por golpe.",
+        date: "2026-10-05",
+        dateDisplay: "5 Out, 2026",
+        readTime: "4 min leitura",
+        url: "o-que-e-med-pix/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
+    },
+
+    {
+        id: "golpe-falsa-central-de-atendimento",
+        category: "Direito Bancário",
+        title: "Golpe da falsa central de atendimento: quando o banco responde",
+        excerpt: "Caiu no golpe da falsa central de atendimento? Veja o que fazer agora, quando o banco responde pelo prejuízo e quais provas reunir.",
+        date: "2026-10-05",
+        dateDisplay: "5 Out, 2026",
+        readTime: "6 min leitura",
+        url: "golpe-falsa-central-de-atendimento/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'
+    },
+
+    {
+        id: "parcelas-atrasadas-financiamento-veiculo",
+        category: "Direito Bancário",
+        title: "Parcelas atrasadas do financiamento de veículo: quando o banco pode pedir a busca e apreensão",
+        excerpt: "Atrasou parcelas do financiamento de veículo? Veja a partir de quando o banco pode pedir a busca e apreensão e o que fazer antes disso.",
+        date: "2026-10-05",
+        dateDisplay: "5 Out, 2026",
+        readTime: "6 min leitura",
+        url: "parcelas-atrasadas-financiamento-veiculo/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+
+    {
         id: "o-que-e-rcc-inss",
         category: "Direito Bancário",
         title: "O que é RCC no INSS (Reserva de Cartão Consignado)",
@@ -129,7 +233,7 @@ const blogPosts = [
     {
         id: "extrato-consignado",
         category: "Direito Bancário",
-        title: "Extrato de empréstimo consignado do INSS: como ler",
+        title: "Extrato de empréstimo consignado do INSS: como consultar, emitir e ler",
         excerpt: "Como emitir o extrato de empréstimo consignado do INSS (HISCON) e o que cada campo significa: contratos, margem, refinanciamentos e descontos.",
         date: "2026-09-12",
         dateDisplay: "12 Set, 2026",

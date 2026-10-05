@@ -1,3 +1,4 @@
 # Arquivos de trabalho que não fazem parte do site publicado
 *.py
 README.md
+tools/
