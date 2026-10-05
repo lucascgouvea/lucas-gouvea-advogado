@@ -346,9 +346,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.classList.add('loading');
                 submitText.innerText = 'Verificando E-mail...';
 
-                // Passo 1: Verificação profunda com ZeroBounce
-                const zbApiKey = '037530324f234166a39f5f9b430ec03f';
-                fetch(`https://api.zerobounce.net/v2/validate?api_key=${zbApiKey}&email=${encodeURIComponent(emailVal)}`)
+                // Passo 1: Verificação do e-mail (ZeroBounce) pela função interna /api/validate-email,
+                // que guarda a chave do serviço fora do código do site
+                fetch(`/api/validate-email?email=${encodeURIComponent(emailVal)}`)
                     .then(response => response.json())
                     .then(data => {
                         // Aceitar 'valid', 'catch-all', 'unknown' (para não bloquear falsos positivos)
