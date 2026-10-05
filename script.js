@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.main-header');
     
     const handleScrollHeader = () => {
+        if (!header) return;
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const openDrawer = () => {
         mobileMenuToggle.classList.add('active');
         mobileDrawer.classList.add('active');
-        drawerOverlay.classList.add('active');
+        if (drawerOverlay) drawerOverlay.classList.add('active');
         document.body.style.overflow = 'hidden'; // Evita scroll de fundo
         mobileMenuToggle.setAttribute('aria-expanded', 'true');
     };
@@ -63,30 +64,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeDrawer = () => {
         mobileMenuToggle.classList.remove('active');
         mobileDrawer.classList.remove('active');
-        drawerOverlay.classList.add('active');
-        // Remover classe de fade out
-        setTimeout(() => {
-            drawerOverlay.classList.remove('active');
-        }, 100);
+        if (drawerOverlay) {
+            drawerOverlay.classList.add('active');
+            // Remover classe de fade out
+            setTimeout(() => {
+                drawerOverlay.classList.remove('active');
+            }, 100);
+        }
         document.body.style.overflow = '';
         mobileMenuToggle.setAttribute('aria-expanded', 'false');
     };
 
-    mobileMenuToggle.addEventListener('click', () => {
-        if (mobileDrawer.classList.contains('active')) {
-            closeDrawer();
-        } else {
-            openDrawer();
-        }
-    });
+    if (mobileMenuToggle && mobileDrawer) {
+        mobileMenuToggle.addEventListener('click', () => {
+            if (mobileDrawer.classList.contains('active')) {
+                closeDrawer();
+            } else {
+                openDrawer();
+            }
+        });
 
-    drawerCloseBtn.addEventListener('click', closeDrawer);
-    drawerOverlay.addEventListener('click', closeDrawer);
+        if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+        if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
 
-    // Fechar drawer ao clicar em links
-    drawerLinks.forEach(link => {
-        link.addEventListener('click', closeDrawer);
-    });
+        // Fechar drawer ao clicar em links
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+    }
 
     /* ==========================================================================
        4. ANIMAR NÚMEROS (SEÇÃO DE AUTORIDADE)
@@ -138,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     faqItems.forEach(item => {
         const trigger = item.querySelector('.faq-trigger');
         const content = item.querySelector('.faq-content');
+        if (!trigger || !content) return; // páginas com <details> nativo dispensam o acordeão
 
         trigger.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
@@ -239,20 +245,22 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const backToTopBtn = document.getElementById('back-to-top');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
-
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
         });
-    });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     /* ==========================================================================
        8. VALIDAÇÃO DO FORMULÁRIO DE CONTATO
@@ -376,6 +384,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                 // Exibir sucesso e limpar formulário
                                 successBanner.style.display = 'flex';
                                 contactForm.reset();
+                                if (typeof gtag === 'function') {
+                                    gtag('event', 'generate_lead', { method: 'formulario', page_path: location.pathname });
+                                }
                                 
                                 // Rolar suavemente até o banner de sucesso
                                 successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -401,4 +412,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+
+/* ==========================================================================
+   9. MEDIÇÃO DE CONTATOS (GA4)
+   Registra cliques em links de WhatsApp e de e-mail em qualquer página.
+   ========================================================================== */
+document.addEventListener('click', (e) => {
+    const link = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!link || typeof gtag !== 'function') return;
+
+    const href = link.getAttribute('href') || '';
+    let eventName = null;
+    if (/wa\.me|api\.whatsapp\.com/i.test(href)) eventName = 'whatsapp_click';
+    else if (href.indexOf('mailto:') === 0) eventName = 'email_click';
+    if (!eventName) return;
+
+    const area = link.closest('section, header, footer, nav, aside, article');
+    const position = area ? (area.id || (area.className || '').toString().split(' ')[0] || area.tagName.toLowerCase()) : 'outro';
+    const label = (link.textContent || '').replace(/\s+/g, ' ').trim() || link.getAttribute('aria-label') || '';
+
+    gtag('event', eventName, {
+        page_path: location.pathname,
+        link_position: position,
+        link_text: label.slice(0, 80),
+        transport_type: 'beacon'
+    });
 });
