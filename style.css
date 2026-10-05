@@ -2513,3 +2513,115 @@ a.clickable-card:hover .service-link svg {
 body.dark-mode .article-table tbody tr:nth-of-type(even) {
     background-color: rgba(255,255,255,0.02);
 }
+
+/* ==========================================================================
+   HERO: H1 COM TAGLINE (SEO) E ARTIGOS EM DESTAQUE NA HOME
+   ========================================================================== */
+.hero-heading {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+.hero-heading .hero-title {
+    display: block;
+    font-family: var(--font-titles);
+    line-height: 1.25;
+}
+
+.home-articles-section {
+    padding: 100px 0;
+    background-color: var(--bg-card);
+}
+
+.home-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.home-article-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+}
+
+.home-article-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-gold);
+    box-shadow: var(--shadow-hover);
+}
+
+.home-article-category {
+    align-self: flex-start;
+    margin-bottom: 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-gold-hover);
+}
+
+.home-article-title {
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+    line-height: 1.35;
+}
+
+.home-article-title a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.home-article-title a:hover {
+    color: var(--color-gold-hover);
+}
+
+.home-article-excerpt {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+}
+
+.home-article-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.home-article-link:hover {
+    color: var(--color-gold-hover);
+}
+
+.home-articles-more {
+    margin-top: 48px;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .home-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .home-articles-section {
+        padding: 70px 0;
+    }
+
+    .home-articles-grid {
+        grid-template-columns: 1fr;
+    }
+}
