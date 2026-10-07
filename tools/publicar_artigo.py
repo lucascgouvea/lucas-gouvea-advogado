@@ -45,6 +45,13 @@ def md_para_html(md):
 
     def link(m):
         href = m.group(1)
+        if href.replace('&amp;', '&').startswith(SITE) and 'utm_' in href:
+            # links internos não levam marcação de campanha: ela cria endereços duplicados
+            # para o Google e troca a origem da visita no Analytics
+            base, _, frag = href.replace('&amp;', '&').partition('#')
+            caminho, _, consulta = base.partition('?')
+            resto = [x for x in consulta.split('&') if x and not x.startswith('utm_')]
+            href = (caminho + ('?' + '&'.join(resto) if resto else '') + ('#' + frag if frag else '')).replace('&', '&amp;')
         externo = href.startswith('http') and not href.startswith(SITE)
         extra = ' target="_blank" rel="noopener noreferrer"' if externo else ''
         return f'<a href="{href}"{extra} {ESTILO_LINK}>'

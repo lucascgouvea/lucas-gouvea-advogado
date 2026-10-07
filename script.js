@@ -426,6 +426,8 @@ document.addEventListener('click', (e) => {
     let eventName = null;
     if (/wa\.me|api\.whatsapp\.com/i.test(href)) eventName = 'whatsapp_click';
     else if (href.indexOf('mailto:') === 0) eventName = 'email_click';
+    // chamadas dos artigos para a página de área ou para o formulário de contato
+    else if (link.closest('.article-body') && /direito-[a-z-]+-sao-carlos\/|#contato|#como-funciona|#atuacao/.test(href)) eventName = 'cta_interno_click';
     if (!eventName) return;
 
     const area = link.closest('section, header, footer, nav, aside, article');
@@ -436,6 +438,7 @@ document.addEventListener('click', (e) => {
         page_path: location.pathname,
         link_position: position,
         link_text: label.slice(0, 80),
+        link_url: href.split('?')[0].slice(0, 120),
         transport_type: 'beacon'
     });
 });
