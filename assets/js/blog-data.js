@@ -1,5 +1,57 @@
 const blogPosts = [
     {
+        id: "banco-pode-descontar-salario-para-pagar-divida",
+        category: "Direito Bancário",
+        title: "O banco pode descontar todo o salário ou benefício para pagar dívida?",
+        excerpt: "Saiba quando o banco pode descontar salário ou benefício para pagar dívida, o que a autorização exige, como cancelar o débito e o que a Justiça permite.",
+        date: "2026-10-14",
+        dateDisplay: "14 Out, 2026",
+        readTime: "8 min leitura",
+        url: "banco-pode-descontar-salario-para-pagar-divida/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+
+    {
+        id: "divida-prescrita-banco-pode-cobrar",
+        category: "Direito Bancário",
+        title: "Dívida prescrita: o banco ainda pode cobrar e negativar?",
+        excerpt: "Descubra se a sua dívida com o banco já prescreveu, por quanto tempo o nome pode ficar negativado e o que o banco ainda pode fazer depois do prazo.",
+        date: "2026-10-14",
+        dateDisplay: "14 Out, 2026",
+        readTime: "8 min leitura",
+        url: "divida-prescrita-banco-pode-cobrar/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+
+    {
+        id: "margem-consignavel-inss",
+        category: "Direito Bancário",
+        title: "Margem consignável do INSS: o que é e como consultar",
+        excerpt: "Consulte a margem consignável do INSS no Meu INSS e entenda quanto do benefício pode ir para empréstimo e cartão, o que entra no cálculo e os limites.",
+        date: "2026-10-14",
+        dateDisplay: "14 Out, 2026",
+        readTime: "6 min leitura",
+        url: "margem-consignavel-inss/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+
+    {
+        id: "desconto-associacao-sindicato-beneficio-inss",
+        category: "Direito Bancário",
+        title: "Desconto de associação ou sindicato no benefício do INSS: como identificar e pedir a devolução",
+        excerpt: "Identifique o desconto de associação ou sindicato no benefício do INSS, entenda por que não é consignado nem RMC e veja como pedir a devolução.",
+        date: "2026-10-14",
+        dateDisplay: "14 Out, 2026",
+        readTime: "7 min leitura",
+        url: "desconto-associacao-sindicato-beneficio-inss/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+
+    {
         id: "o-que-e-rmc-inss",
         category: "Direito Bancário",
         title: "O que é RMC no INSS (Reserva de Margem Consignável)",
