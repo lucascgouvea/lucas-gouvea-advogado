@@ -24,6 +24,7 @@ ICONES = {
     'escudo': '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
     'alerta': '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
     'banco': '<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>',
+    'casa': '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
 }
 CLASSE_CATEGORIA = {'Direito Bancário': 'a-card-banner-direito-bancario', 'Direito Imobiliário': 'a-card-banner-direito-imobiliario'}
 
@@ -153,7 +154,7 @@ def gerar(caminho, data_pub):
     # lista do blog
     p = os.path.join(RAIZ, 'assets/js/blog-data.js'); b = open(p, encoding='utf-8').read()
     if f'url: "{slug}/"' not in b:
-        icone = ICONES[escolher_icone(slug)]
+        icone = ICONES['casa' if categoria == 'Direito Imobiliário' else escolher_icone(slug)]
         entrada = f'''const blogPosts = [
     {{
         id: "{slug}",
@@ -191,7 +192,7 @@ if __name__ == '__main__':
     data_pub = datetime.date.today()
     if '--data' in args:
         k = args.index('--data'); data_pub = datetime.date.fromisoformat(args[k + 1]); del args[k:k + 2]
-    # o último da linha de comando fica no topo da lista do blog; por isso, gera em ordem inversa
+    # gera em ordem inversa: cada artigo entra no topo da lista, então o primeiro da linha de comando fica no topo
     for caminho in reversed(args):
         print('gerado:', gerar(caminho, data_pub))
     subprocess.run([sys.executable, os.path.join(RAIZ, 'tools/prerender_blog.py')], check=True)

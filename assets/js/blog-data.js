@@ -1,5 +1,57 @@
 const blogPosts = [
     {
+        id: "multa-rescisoria-aluguel",
+        category: "Direito Imobiliário",
+        title: "Multa por sair antes do fim do aluguel: como calcular e quando ela não é devida",
+        excerpt: "Veja como calcular a multa por devolver o imóvel antes do prazo, com exemplos, quando ela não é devida e quando o valor pode ser reduzido.",
+        date: "2026-10-19",
+        dateDisplay: "19 Out, 2026",
+        readTime: "10 min leitura",
+        url: "multa-rescisoria-aluguel/",
+        iconClass: "a-card-banner-direito-imobiliario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
+    },
+
+    {
+        id: "seguro-fianca-aluguel",
+        category: "Direito Imobiliário",
+        title: "Seguro fiança no aluguel: o que cobre, quem paga e o que acontece no fim do contrato",
+        excerpt: "O seguro fiança protege o proprietário, não o inquilino. Veja o que a apólice cobre, quem paga, quando há devolução e o que muda no fim do aluguel.",
+        date: "2026-10-19",
+        dateDisplay: "19 Out, 2026",
+        readTime: "13 min leitura",
+        url: "seguro-fianca-aluguel/",
+        iconClass: "a-card-banner-direito-imobiliario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
+    },
+
+    {
+        id: "devolucao-caucao-vistoria-saida",
+        category: "Direito Imobiliário",
+        title: "Devolução da caução e vistoria de saída: o que o proprietário pode descontar",
+        excerpt: "Veja o que o proprietário pode descontar da caução na vistoria de saída, como o valor deve ser corrigido e o que fazer se ele não devolver.",
+        date: "2026-10-19",
+        dateDisplay: "19 Out, 2026",
+        readTime: "10 min leitura",
+        url: "devolucao-caucao-vistoria-saida/",
+        iconClass: "a-card-banner-direito-imobiliario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
+    },
+
+    {
+        id: "financiamento-imovel-atrasado-leilao",
+        category: "Direito Imobiliário",
+        title: "Financiamento de imóvel atrasado: quando o imóvel vai a leilão e até quando dá para evitar",
+        excerpt: "Atrasou o financiamento da casa? Veja cada etapa até o leilão, os prazos da Lei 9.514, até quando dá para pagar e o que acontece com a dívida.",
+        date: "2026-10-19",
+        dateDisplay: "19 Out, 2026",
+        readTime: "10 min leitura",
+        url: "financiamento-imovel-atrasado-leilao/",
+        iconClass: "a-card-banner-direito-imobiliario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
+    },
+
+    {
         id: "banco-pode-descontar-salario-para-pagar-divida",
         category: "Direito Bancário",
         title: "O banco pode descontar todo o salário ou benefício para pagar dívida?",
