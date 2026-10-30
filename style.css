@@ -2652,3 +2652,24 @@ body.dark-mode .article-table tbody tr:nth-of-type(even) {
     line-height: 1.5;
     color: var(--text-muted);
 }
+
+/* Blocos de texto das páginas de área */
+.content-block > div:first-child > h2:first-child {
+    margin-top: 0;
+}
+
+.content-block h3 {
+    font-family: var(--font-titles);
+    font-size: 1.35rem;
+    color: var(--primary-color);
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+.content-block ul {
+    list-style: disc;
+}
+
+.content-block .table-responsive {
+    margin-bottom: 20px;
+}
