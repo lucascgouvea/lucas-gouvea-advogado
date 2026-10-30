@@ -40,6 +40,16 @@
     /* Transition Speed */
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.2s ease;
+
+    /* Nomes usados nas páginas do blog e de área (antes sem definição) */
+    --primary-color: var(--color-primary);
+    --color-primary-dark: #0A111C;
+    --gold: var(--color-gold);
+    --white: var(--color-white);
+    --bg-light: var(--color-light-bg);
+    --light-text: var(--text-muted);
+    --text-color: var(--text-main);
+    --font-sans: var(--font-body);
 }
 
 /* Dark Mode Variables Override */
@@ -2303,12 +2313,12 @@ body.dark-mode .main-footer {
 /* Article Page Layout */
 .article-page {
     background-color: var(--white);
-    padding-top: 120px;
+    padding-top: 0;
 }
 
 .article-header {
     background: var(--bg-light);
-    padding: 60px 0 40px;
+    padding: 180px 0 40px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
@@ -2393,6 +2403,24 @@ body.dark-mode .main-footer {
 .article-body ul, .article-body ol {
     margin: 20px 0 20px 20px;
     padding-left: 20px;
+}
+
+.article-body ul {
+    list-style: disc;
+}
+
+.article-body ol {
+    list-style: decimal;
+}
+
+.article-body li::marker {
+    color: var(--color-gold);
+}
+
+.article-body a:not(.btn):not(.share-btn) {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: underline;
 }
 
 .article-body li {
@@ -2672,4 +2700,52 @@ body.dark-mode .article-table tbody tr:nth-of-type(even) {
 
 .content-block .table-responsive {
     margin-bottom: 20px;
+}
+
+/* Perguntas frequentes em <details> (páginas de área) */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+details.faq-item > summary.faq-question {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 28px;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--color-primary);
+}
+
+details.faq-item > summary.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+details.faq-item > summary .faq-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+details.faq-item[open] {
+    border-color: var(--color-gold);
+}
+
+details.faq-item[open] > summary .faq-icon {
+    transform: rotate(45deg);
+}
+
+details.faq-item .faq-answer {
+    padding: 0 28px 22px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+details.faq-item .faq-answer p {
+    margin: 0;
 }
