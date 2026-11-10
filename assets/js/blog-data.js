@@ -1,5 +1,70 @@
 const blogPosts = [
     {
+        id: "margem-extrapolada-inss",
+        category: "Direito Bancário",
+        title: "Margem extrapolada no INSS: o que significa e como resolver",
+        excerpt: "Margem extrapolada no INSS indica descontos acima do limite permitido. Veja por que acontece, o que muda nos contratos e como resolver.",
+        date: "2026-11-10",
+        dateDisplay: "10 Nov, 2026",
+        readTime: "6 min leitura",
+        url: "margem-extrapolada-inss/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+
+    {
+        id: "black-friday-direitos-do-consumidor",
+        category: "Direito Cível",
+        title: "Compras na Black Friday: produto não entregue, arrependimento e propaganda enganosa",
+        excerpt: "Comprou na Black Friday e o produto não chegou, veio errado ou o desconto era falso? Veja seus direitos, os prazos e como reclamar.",
+        date: "2026-11-10",
+        dateDisplay: "10 Nov, 2026",
+        readTime: "7 min leitura",
+        url: "black-friday-direitos-do-consumidor/",
+        iconClass: "a-card-banner-direito-civel",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>'
+    },
+
+    {
+        id: "consignado-nao-aparece-meu-inss",
+        category: "Direito Bancário",
+        title: "Empréstimo consignado não aparece para autorizar no Meu INSS: o que fazer",
+        excerpt: "A proposta de consignado não aparece no Meu INSS para autorizar? Veja as causas mais comuns, como resolver cada uma e o prazo de 5 dias.",
+        date: "2026-11-10",
+        dateDisplay: "10 Nov, 2026",
+        readTime: "6 min leitura",
+        url: "consignado-nao-aparece-meu-inss/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+
+    {
+        id: "reajuste-plano-de-saude-59-anos",
+        category: "Direito Cível",
+        title: "Reajuste do plano de saúde aos 59 anos: quando é abusivo e como pedir a revisão",
+        excerpt: "O plano de saúde pode aumentar aos 59 anos, mas dentro de limites. Veja as regras da ANS, o que o STJ decidiu e como pedir a revisão.",
+        date: "2026-11-10",
+        dateDisplay: "10 Nov, 2026",
+        readTime: "7 min leitura",
+        url: "reajuste-plano-de-saude-59-anos/",
+        iconClass: "a-card-banner-direito-civel",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>'
+    },
+
+    {
+        id: "divorcio-em-cartorio",
+        category: "Direito Cível",
+        title: "Divórcio em cartório: passo a passo, documentos e custos",
+        excerpt: "O divórcio em cartório é feito por escritura, sem processo, quando há acordo. Veja quem pode fazer, os documentos, as etapas e os custos.",
+        date: "2026-11-10",
+        dateDisplay: "10 Nov, 2026",
+        readTime: "7 min leitura",
+        url: "divorcio-em-cartorio/",
+        iconClass: "a-card-banner-direito-civel",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
+    },
+
+    {
         id: "multa-rescisoria-aluguel",
         category: "Direito Imobiliário",
         title: "Multa por sair antes do fim do aluguel: como calcular e quando ela não é devida",
