@@ -390,7 +390,7 @@ const blogPosts = [
     {
         id: "revisional-financiamento",
         category: "Direito Bancário",
-        title: "Juros De Financiamento De Veículo: O Que Pode Ser Revisto?",
+        title: "Juros de financiamento de veículo: o que pode ser revisto?",
         excerpt: "Entenda o que uma revisional de financiamento de veículo pode discutir: juros, tarifas, seguro e encargos, e o que a ação não resolve na prática.",
         date: "2026-09-12",
         dateDisplay: "12 Set, 2026",
@@ -414,7 +414,7 @@ const blogPosts = [
     {
         id: "churning-consignado",
         category: "Direito Bancário",
-        title: "Empréstimo Consignado Que Nunca Termina: Entenda o Churning",
+        title: "Empréstimo consignado que nunca termina: entenda o churning",
         excerpt: "Refinanciamento sucessivo pode transformar um consignado em dívida sem fim. Entenda como identificar churning no extrato do INSS e o que a lei diz.",
         date: "2026-09-03",
         dateDisplay: "3 Set, 2026",
@@ -450,7 +450,7 @@ const blogPosts = [
     {
         id: "erro-medico",
         category: "Direito Médico",
-        title: "Erro Médico: Como agir e quais são os direitos do paciente?",
+        title: "Erro médico: como agir e quais são os direitos do paciente?",
         excerpt: "O erro médico pode causar danos irreparáveis. Entenda como comprovar negligência ou imperícia e quais as formas de reparação civil e indenizatória disponíveis.",
         date: "2026-06-29",
         dateDisplay: "29 Jun, 2026",

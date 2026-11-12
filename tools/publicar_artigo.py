@@ -121,7 +121,7 @@ def gerar(caminho, data_pub):
         res, k = re.subn(padrao, lambda _: novo, texto, flags=re.S)
         assert k == n, (padrao, k)
         return res
-    cabeca = troca(r'<title>.*?</title>', f'<title>{titulo} | Lucas Gouvea</title>', cabeca)
+    cabeca = troca(r'<title>.*?</title>', f'<title>{titulo}</title>', cabeca)
     cabeca = troca(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{desc}">', cabeca)
     cabeca = troca(r'<meta name="last-verified" content="[^"]*">', f'<meta name="last-verified" content="{verificado}">', cabeca)
     cabeca = troca(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{url}">', cabeca)

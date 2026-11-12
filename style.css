@@ -2749,3 +2749,43 @@ details.faq-item .faq-answer {
 details.faq-item .faq-answer p {
     margin: 0;
 }
+
+
+/* Chamada de contato no meio dos artigos */
+.article-cta-inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    padding: 22px 26px;
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--color-gold);
+    border-radius: 8px;
+}
+
+.article-body .article-cta-inline p {
+    margin: 0;
+    flex: 1 1 260px;
+}
+
+.article-cta-inline .btn {
+    flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+    }
+    .back-to-top-btn {
+        bottom: 88px;
+        right: 26px;
+    }
+    .article-cta-inline .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
