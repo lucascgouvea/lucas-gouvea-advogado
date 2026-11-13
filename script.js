@@ -494,7 +494,7 @@ document.addEventListener('click', (e) => {
         raiz.innerHTML =
             '<div class="wa-chat-panel" id="wa-chat-panel" role="dialog" aria-label="Falar com o escritório pelo WhatsApp" hidden>' +
                 '<div class="wa-chat-header">' +
-                    '<span class="wa-chat-avatar" aria-hidden="true">LG</span>' +
+                    '<img class="wa-chat-avatar" src="/assets/whatsapp-avatar.png" alt="" width="40" height="40">' +
                     '<span class="wa-chat-id"><strong>Lucas Gouvea Advogado</strong><small>Atendimento pelo WhatsApp</small></span>' +
                     '<button type="button" class="wa-chat-close" aria-label="Fechar">&times;</button>' +
                 '</div>' +
