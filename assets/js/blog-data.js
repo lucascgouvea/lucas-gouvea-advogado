@@ -1,5 +1,18 @@
 const blogPosts = [
     {
+        id: "revisao-emprestimo-pessoal",
+        category: "Direito Bancário",
+        title: "Revisão de empréstimo pessoal: como saber se os juros do seu contrato podem ser discutidos",
+        excerpt: "Revisão de empréstimo pessoal: como achar a modalidade certa, comparar a taxa com a média do Banco Central e o que o STJ ainda vai decidir sobre juros.",
+        date: "2026-11-13",
+        dateDisplay: "13 Nov, 2026",
+        readTime: "12 min leitura",
+        url: "revisao-emprestimo-pessoal/",
+        iconClass: "a-card-banner-direito-bancario",
+        svgIcon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+    },
+
+    {
         id: "margem-extrapolada-inss",
         category: "Direito Bancário",
         title: "Margem extrapolada no INSS: o que significa e como resolver",
